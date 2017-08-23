@@ -54,10 +54,15 @@ class Home extends Component{
         <div className = "homeButton_Container">
           <a id="Coding" className="homeButton"
              onClick ={()=>{this.props.changePage(2)}}
-          > Coding </a>
+          ><span id="codingText">Coding</span> </a>
+          <a id="Design" className="homeButton"
+             onClick ={()=>{this.props.changePage(3)}}
+          ><span id="designText">Design</span></a>
           <a id="Photography" className="homeButton"
              onClick ={()=>{this.props.changePage(1)}}
-          > Photography </a>
+          > <span id="photoText">Photography</span></a>
+
+
         </div>
       </div>
     )
@@ -96,7 +101,24 @@ class Coding extends Component {
 
 
     return(
-      <div className= "Coding_Container">
+      <div className= "project_container">
+      </div>
+    )
+  }
+}
+
+class Design extends Component{
+  constructor(){
+    super();
+    this.state = {
+      currentProject: 0,
+    };
+  }
+
+  render(){
+
+    return(
+      <div className= "project_container">
       </div>
     )
   }
@@ -105,7 +127,8 @@ class Coding extends Component {
 var MainPages = [
   {Component : <Home />, name : "Home"},
   {Component : <Photography />, name : "Photography"},
-  {Component : <Coding />, name: "Coding"}
+  {Component : <Coding />, name: "Coding"},
+  {Component : <Design />, name: "Design"}
 ];
 
 

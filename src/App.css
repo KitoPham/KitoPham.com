@@ -12,6 +12,7 @@
 }
 
 .header {
+  z-index: 2;
   position:fixed;
   top:0;
   background-color: whitesmoke;
@@ -33,13 +34,12 @@
 .App-intro {
   font-size: large;
 }
-.headerButton{
+.headerButton, .homeButton_Container{
   cursor: pointer;
 }
 
 .headerButton_Container * {
   margin: 0 10px 0;
-
 }
 
 .Home_Container{
@@ -50,14 +50,73 @@
   display: inline-block;
   background: url("resources/computer.jpg") top left;
   color: white;
-  margin: 10px;
-  padding: 10px;
-  height: 100px;
-  width: auto;
+}
+#Photography, #Coding, #Design{
+  float:left;
+  position:absolute;
+}
+#Photography{
+  height: 400px;
+  width: 300px;
+  top:0;
+  right:0;
+
 }
 
-.homeButton_Container{
+#Coding:hover{
+  z-index: 1;
+  animation-duration: 5s;
+  width: 600px;
+  height:85%;
+}
 
+#Coding:hover ~ #Design{
+  height: 15%;
+}
+
+#Design:hover ~ #Coding{
+  height: 15%;
+}
+
+#Design:hover ~ #photoText{
+  top:10px;
+}
+
+
+
+#Coding, #Design{
+  height:49%;
+  width:48%;
+}
+
+#Coding{
+  top:0;
+  left:0;
+}
+
+#Design{
+  bottom:0;
+  left:0;
+}
+
+a > span {
+  position: absolute;
+  bottom:10px;
+}
+
+#photoText{
+  right: 10px;
+}
+
+#codingText, #designText{
+  left: 10px;
+}
+.homeButton_Container{
+  position: relative;
+  height:400px;
+  width:600px;
+  margin:auto;
+  font-size: 32px;
 }
 
 body {
