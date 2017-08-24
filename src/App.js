@@ -44,26 +44,34 @@ class Photography extends Component {
 }
 
 class Home extends Component{
-  constructor(){
+  constructor() {
     super();
-    this.state= [
-      size: 0
-    ]
+    this.state = {
+      picNum: 0
+    }
   }
+
+  pictures = [
+    "codePicture",
+    "designPicture"
+  ];
 
   render() {
     return(
       <div className = "Home_Container">
         <div className = "homeButton_Container">
-          <img id="homeImage"/>
+          <img id={this.pictures[this.state.picNum]} className="homeImage" alt="picture"/>
           <div id="Coding" className="homeButton"
-             onClick ={()=>{this.props.changePage(1)}}
+               onClick ={()=>{this.props.changePage(1)}}
+               onMouseOver={this.setState({picNum: 0})}
           > Coding </div>
           <div id="Design" className="homeButton"
                onClick ={()=>{this.props.changePage(2)}}
+               onMouseOver={this.setState({picNum: 1})}
           >Design</div>
           <div id="Photography" className="homeButton"
-             onClick ={()=>{this.props.changePage(3)}}
+               onClick ={()=>{this.props.changePage(3)}}
+               /*onMouseOver={this.setState({picNum: 1})}*/
           >Photography</div>
         </div>
       </div>

@@ -24,10 +24,8 @@
   display:inline;
 }
 .header > div {
-
   line-height: 60px;
   margin: 0 0 30px 10px;
-
 }
 
 .App-intro {
@@ -45,18 +43,21 @@
   margin-top: 50px;
 }
 
-#homeImage{
+.homeImage{
   display: block;
   text-align: center;
   height:810px;
   width:100%;
-  background: url("resources/computer.jpg");
   background-size: cover;
   margin:auto;
 
 }
 
-#Coding:hover ~ #homeImage{
+#codePicture{
+  background: url("resources/computer.jpg");
+}
+
+#designPicture{
   background: url("resources/other.jpg");
 }
 
