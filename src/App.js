@@ -53,7 +53,8 @@ class Home extends Component{
 
   pictures = [
     "codePicture",
-    "designPicture"
+    "designPicture",
+    "photographyPicture"
   ];
 
   render() {
@@ -63,15 +64,15 @@ class Home extends Component{
           <img id={this.pictures[this.state.picNum]} className="homeImage" alt="picture"/>
           <div id="Coding" className="homeButton"
                onClick ={()=>{this.props.changePage(1)}}
-               onMouseOver={this.setState({picNum: 0})}
+               onMouseOver={()=>{this.setState({picNum: 0})}}
           > Coding </div>
           <div id="Design" className="homeButton"
                onClick ={()=>{this.props.changePage(2)}}
-               onMouseOver={this.setState({picNum: 1})}
+               onMouseOver={()=>{this.setState({picNum: 1})}}
           >Design</div>
           <div id="Photography" className="homeButton"
                onClick ={()=>{this.props.changePage(3)}}
-               /*onMouseOver={this.setState({picNum: 1})}*/
+               onMouseOver={()=>{this.setState({picNum: 2})}}
           >Photography</div>
         </div>
       </div>
