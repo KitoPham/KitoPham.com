@@ -15,10 +15,10 @@
   z-index: 2;
   position:fixed;
   top:0;
-  background-color: whitesmoke;
   color: black;
   text-align: left;
   width: 100%;
+  background-color: whitesmoke;
 }
 
 .header *{
@@ -50,53 +50,79 @@
   display: inline-block;
   background: url("resources/computer.jpg") top left;
   color: white;
+  float:left;
+  position:absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homeButton_Container{
+  position: relative;
+  height:800px;
+  width:1000px;
+  margin:auto;
+  font-size: 32px;
+  background-color: #ffffff;
+  border: solid 30px #ffffff;
 }
 #Photography, #Coding, #Design{
   float:left;
   position:absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-#Photography{
-  height: 400px;
-  width: 300px;
+
+/*Defaults */
+#Photography, #bigPhotography, #skinnyPhotography{
+  height: 100%;
+  width: 49%;
   top:0;
   right:0;
-
 }
 
-#Coding:hover{
-  z-index: 1;
-  animation-duration: 5s;
-  width: 600px;
-  height:85%;
-}
-
-#Coding:hover ~ #Design{
-  height: 15%;
-}
-
-#Design:hover ~ #Coding{
-  height: 15%;
-}
-
-#Design:hover ~ #photoText{
-  top:10px;
-}
-
-
-
-#Coding, #Design{
-  height:49%;
-  width:48%;
-}
-
-#Coding{
+#Coding, #skinnyCode, #shortCode, #bigCoding{
   top:0;
   left:0;
+  height:49%;
+  width:49%;
+  background-position: right;
 }
 
-#Design{
+#Design, #skinnyDesign, #shortDesign, #bigDesign{
   bottom:0;
   left:0;
+  height:49%;
+  width:49%;
+  background-position: right;
+}
+
+#bigPhotography, #bigDesign, #bigCoding {
+  z-index: 1;
+}
+/*Modify widths of sections*/
+#shortDesign, #shortCode, #bigDesign, #bigCoding, #bigPhotography{
+  width: 69%;
+}
+
+#skinnyDesign, #skinnyCode, #skinnyPhotography{
+  width: 29%;
+}
+
+/*Modify Heights */
+
+#shortDesign, #shortCode{
+  height: 34%;
+}
+#bigDesign, #bigCoding{
+  z-index: 1;
+  height:64%;
+}
+
+/*Transition Speeds*/
+#Design, #skinnyDesign, #shortDesign, #bigDesign, #Coding, #skinnyCode, #shortCode,
+#bigCoding,#Photography, #skinnyPhotography, #shortPhotographyTop, #bigPhotography{
+  transition: 1s;
+
 }
 
 a > span {
@@ -111,15 +137,10 @@ a > span {
 #codingText, #designText{
   left: 10px;
 }
-.homeButton_Container{
-  position: relative;
-  height:400px;
-  width:600px;
-  margin:auto;
-  font-size: 32px;
-}
 
 body {
+  font-family: Avalon,"Lucida Sans", sans-serif;
+  background-color: whitesmoke;
   margin: 0;
   padding: 0;
   text-align: center;

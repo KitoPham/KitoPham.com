@@ -3,7 +3,7 @@ import './App.css';
 import linkedinlogo from './logo.svg';
 import fblogo from './logo.svg';
 import logo from './logo.svg';
-
+import ReactDOM from 'react-dom'
 
 /*
  * JS used to manage the content of the website
@@ -44,22 +44,39 @@ class Photography extends Component {
 }
 
 class Home extends Component{
+  constructor(){
+    super();
+    this.state = {
+      size : 0
+    }
+  }
+  sizeClasses = [
+    ["Coding","Design","Photography"],
+    ["bigCoding", "shortDesign", "skinnyPhotography" ],
+    ["shortCode", "bigDesign", "skinnyPhotography"],
+    ["skinnyCode", "skinnyDesign", "bigPhotography"]
+  ]
 
 
   render() {
-
+    var Box = [3];
     return(
       <div className = "Home_Container">
-        <p> home </p>
         <div className = "homeButton_Container">
-          <a id="Coding" className="homeButton"
+          <a id={this.sizeClasses[this.state.size][0]} className="homeButton" ref = {(input) => {Box[0] = input}}
              onClick ={()=>{this.props.changePage(2)}}
+             onMouseOver ={() =>{this.setState({size:1});}}
+             onMouseLeave={()=>{this.setState({size:0});}}
           ><span id="codingText">Coding</span> </a>
-          <a id="Design" className="homeButton"
+          <a id={this.sizeClasses[this.state.size][1]} className="homeButton" ref = {(input) => {Box[1] = input}}
              onClick ={()=>{this.props.changePage(3)}}
+             onMouseOver ={() =>{this.setState({size:2});}}
+             onMouseLeave={()=>{this.setState({size:0});}}
           ><span id="designText">Design</span></a>
-          <a id="Photography" className="homeButton"
+          <a id={this.sizeClasses[this.state.size][2]} className="homeButton" ref = {(input) => {Box[2] = input}}
              onClick ={()=>{this.props.changePage(1)}}
+             onMouseOver ={() =>{this.setState({size:3});}}
+             onMouseLeave={()=>{this.setState({size:0});}}
           > <span id="photoText">Photography</span></a>
 
 
