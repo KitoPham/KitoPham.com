@@ -56,7 +56,7 @@
 
 }
 
-#Coding:hover~#homeImage{
+#Coding:hover ~ #homeImage{
   background: url("resources/other.jpg");
 }
 

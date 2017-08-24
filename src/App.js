@@ -44,14 +44,18 @@ class Photography extends Component {
 }
 
 class Home extends Component{
-
+  constructor(){
+    super();
+    this.state= [
+      size: 0
+    ]
+  }
 
   render() {
-
     return(
       <div className = "Home_Container">
         <div className = "homeButton_Container">
-          <img id="homeImage">Kito Pham</img>
+          <img id="homeImage"/>
           <div id="Coding" className="homeButton"
              onClick ={()=>{this.props.changePage(1)}}
           > Coding </div>
