@@ -33,27 +33,40 @@
 .App-intro {
   font-size: large;
 }
-.headerButton{
+.headerButton, #Coding, #Design, #Photography{
   cursor: pointer;
 }
 
 .headerButton_Container * {
   margin: 0 10px 0;
-
 }
 
 .Home_Container{
-  margin-top: 70px;
+  margin-top: 50px;
+}
+
+#homeImage{
+  display: block;
+  text-align: center;
+  height:810px;
+  width:100%;
+  background: url("resources/computer.jpg");
+  background-size: cover;
+  margin:auto;
+
+}
+
+#Coding:hover~#homeImage{
+  background: url("resources/other.jpg");
 }
 
 .homeButton {
-  display: inline-block;
-  background: url("resources/computer.jpg") top left;
-  color: white;
-  margin: 10px;
+  font-size: 30px;
+  display:inline-block;
+  color: black;
+  margin: 10px 30px 30px 10px;
   padding: 10px;
-  height: 100px;
-  width: auto;
+  vertical-align: middle;
 }
 
 .homeButton_Container{
