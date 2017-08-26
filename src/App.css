@@ -13,10 +13,11 @@
 
 .header {
   z-index: 2;
-  position:fixed;
-  top:0;
+  /*position:fixed;
+  top:0;*/
   color: black;
   text-align: left;
+  margin-top: 30px;
   width: 100%;
   background-color: whitesmoke;
 }
@@ -34,7 +35,7 @@
 .App-intro {
   font-size: large;
 }
-.headerButton, .homeButton_Container{
+.headerButton, .homeButton{
   cursor: pointer;
 }
 
@@ -43,39 +44,56 @@
 }
 
 .Home_Container{
-  margin-top: 70px;
+  margin-top: 10px;
+}
+video{
+  z-index: -1;
+  min-width:100%;
+  min-height:100%;
 }
 
+.videoOverlay{
+  position:absolute;
+  float:left;
+  background-color: rgba(0,0,0,.5);
+  height:100%;
+  width:100%;
+  top: 0;
+  right:0;
+}
+
+.videoOverlay:hover{
+  background-color: rgba(50,100,256,.2)
+}
 .homeButton {
   display: inline-block;
-  background: url("resources/computer.jpg") top left;
+  background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("resources/computer.jpg") no-repeat;
   color: white;
   float:left;
   position:absolute;
-  background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .homeButton_Container{
   position: relative;
-  height:800px;
-  width:1000px;
+  height:750px;
+  width:1150px;
   margin:auto;
-  font-size: 32px;
-  background-color: #ffffff;
-  border: solid 30px #ffffff;
+  font-size: 48px;
+  /*background-color: #ffffff;
+  border: solid 30px #ffffff;*/
 }
 #Photography, #Coding, #Design{
   float:left;
   position:absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
+  overflow: hidden;
 }
 
 /*Defaults */
 #Photography, #bigPhotography, #skinnyPhotography{
   height: 100%;
-  width: 49%;
+  width: 49.5%;
   top:0;
   right:0;
 }
@@ -83,39 +101,41 @@
 #Coding, #skinnyCode, #shortCode, #bigCoding{
   top:0;
   left:0;
-  height:49%;
-  width:49%;
+  height:49.5%;
+  width:49.5%;
   background-position: right;
 }
 
 #Design, #skinnyDesign, #shortDesign, #bigDesign{
   bottom:0;
   left:0;
-  height:49%;
-  width:49%;
+  height:49.5%;
+  width:49.5%;
   background-position: right;
 }
 
 #bigPhotography, #bigDesign, #bigCoding {
+  background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.3)), url("resources/computer.jpg") no-repeat;
+  background-size: cover;
   z-index: 1;
 }
 /*Modify widths of sections*/
 #shortDesign, #shortCode, #bigDesign, #bigCoding, #bigPhotography{
-  width: 69%;
+  width: 69.5%;
 }
 
 #skinnyDesign, #skinnyCode, #skinnyPhotography{
-  width: 29%;
+  width: 29.5%;
 }
 
 /*Modify Heights */
 
 #shortDesign, #shortCode{
-  height: 34%;
+  height: 34.5%;
 }
 #bigDesign, #bigCoding{
   z-index: 1;
-  height:64%;
+  height:64.5%;
 }
 
 /*Transition Speeds*/
@@ -131,11 +151,11 @@ a > span {
 }
 
 #photoText{
-  right: 10px;
+  right: 20px;
 }
 
 #codingText, #designText{
-  left: 10px;
+  left: 20px;
 }
 
 body {

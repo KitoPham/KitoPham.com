@@ -3,6 +3,7 @@ import './App.css';
 import linkedinlogo from './logo.svg';
 import fblogo from './logo.svg';
 import logo from './logo.svg';
+import {Browser-Router as Router,Link, Route} from react-router-dom
 import ReactDOM from 'react-dom'
 
 /*
@@ -21,8 +22,7 @@ class Mainheader extends Component {
             <a
               key= {index}
               className="headerButton"
-              onClick ={()=>{this.props.changePage(index)}}
-            >
+              onClick ={()=>{this.props.changePage(index)}}>
               {page.name}
             </a>
           ))}
@@ -56,28 +56,46 @@ class Home extends Component{
     ["shortCode", "bigDesign", "skinnyPhotography"],
     ["skinnyCode", "skinnyDesign", "bigPhotography"]
   ]
-
+  Box = [3];
 
   render() {
-    var Box = [3];
     return(
       <div className = "Home_Container">
         <div className = "homeButton_Container">
-          <a id={this.sizeClasses[this.state.size][0]} className="homeButton" ref = {(input) => {Box[0] = input}}
-             onClick ={()=>{this.props.changePage(2)}}
-             onMouseOver ={() =>{this.setState({size:1});}}
-             onMouseLeave={()=>{this.setState({size:0});}}
-          ><span id="codingText">Coding</span> </a>
-          <a id={this.sizeClasses[this.state.size][1]} className="homeButton" ref = {(input) => {Box[1] = input}}
-             onClick ={()=>{this.props.changePage(3)}}
-             onMouseOver ={() =>{this.setState({size:2});}}
-             onMouseLeave={()=>{this.setState({size:0});}}
-          ><span id="designText">Design</span></a>
-          <a id={this.sizeClasses[this.state.size][2]} className="homeButton" ref = {(input) => {Box[2] = input}}
+          <a id={this.sizeClasses[this.state.size][0]} className="homeButton"
              onClick ={()=>{this.props.changePage(1)}}
-             onMouseOver ={() =>{this.setState({size:3});}}
-             onMouseLeave={()=>{this.setState({size:0});}}
-          > <span id="photoText">Photography</span></a>
+             onMouseOver ={() =>{this.setState({size:1});
+             this.Box[0].play();}}
+             onMouseLeave={()=>{this.setState({size:0});
+             this.Box[0].pause(); this.Box[0].currentTime=0;}}>
+            <video ref = {(input) => {this.Box[0] = input}} loop>
+              <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/mp4" />
+              <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/ogg" />
+            </video>
+            <div className="videoOverlay"></div>
+            <span id="codingText">Coding</span>
+          </a>
+
+          <a id={this.sizeClasses[this.state.size][1]} className="homeButton" ref = {(input) => {this.Box[1] = input}}
+             onClick ={()=>{this.props.changePage(2)}}
+             onMouseOver ={() =>{this.setState({size:2});}}
+             onMouseLeave={()=>{this.setState({size:0});}}>
+            <span id="designText">Design</span>
+          </a>
+
+          <a id={this.sizeClasses[this.state.size][2]} className="homeButton"
+             onClick ={()=>{this.props.changePage(1)}}
+             onMouseOver ={() =>{this.setState({size:3});
+               this.Box[2].play();}}
+             onMouseLeave={()=>{this.setState({size:0});
+               this.Box[2].pause(); this.Box[2].currentTime=0;}}>
+            <video ref = {(input) => {this.Box[2] = input}} loop>
+              <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/mp4" />
+              <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/ogg" />
+            </video>
+            <div className="videoOverlay"></div>
+            <span id="photoText">Photography</span>
+          </a>
 
 
         </div>
@@ -90,6 +108,8 @@ class Mainfooter extends Component {
   render() {
     return (
       <div className="footer">
+        <div id = "footerText">@2017</div>
+        <h3> Contact Me </h3>
         <div id = "social-media-bar">
           <a href = "https://www.facebook.com/KitoMahp">
             <img src={fblogo} className="social-media" alt="facebook" />
@@ -143,9 +163,9 @@ class Design extends Component{
 
 var MainPages = [
   {Component : <Home />, name : "Home"},
-  {Component : <Photography />, name : "Photography"},
   {Component : <Coding />, name: "Coding"},
-  {Component : <Design />, name: "Design"}
+  {Component : <Design />, name: "Design"},
+  {Component : <Photography />, name : "Photography"},
 ];
 
 
@@ -157,7 +177,7 @@ class App extends Component {
     };
     this.changePage = this.changePage.bind(this);
   }
-
+  /*Deprecated*/
   changePage(index) {
     this.setState({
       currentPage: index,
@@ -166,6 +186,7 @@ class App extends Component {
     console.log("index is " + index);
 
   }
+
   render () {
     const currPage = MainPages[this.state.currentPage].Component;
     console.log(this.state.currentPage);
