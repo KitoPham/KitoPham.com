@@ -4,7 +4,7 @@ import linkedinlogo from './logo.svg';
 import fblogo from './logo.svg';
 import logo from './logo.svg';
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 /*
  * JS used to manage the content of the website
