@@ -1,8 +1,8 @@
 
-.App-logo {
+.header-logo {
   animation: App-logo-spin infinite 20s linear;
-  height:60px;
-  margin-left: 70px;
+  height:50px;
+  margin-left: 20px;
   float:left;
 }
 
@@ -17,7 +17,7 @@
   top:0;*/
   color: black;
   text-align: left;
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100%;
   background-color: whitesmoke;
 }
@@ -26,10 +26,18 @@
   display:inline;
 }
 .header > div {
+  line-height: 50px;
+  margin: 0 0 0 10px;
 
-  line-height: 60px;
-  margin: 0 0 30px 10px;
+}
 
+.headerButton_Container > h2 {
+  color: black;
+  padding: 0;
+}
+
+.headerButton_Container > h2, .homeButton_Container{
+  background-color: whitesmoke;
 }
 
 .App-intro {
@@ -44,12 +52,13 @@
 }
 
 .Home_Container{
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 video{
   z-index: -1;
-  min-width:100%;
-  min-height:100%;
+  min-width:1200px;
+  min-height:1200px;
 }
 
 .videoOverlay{
@@ -67,22 +76,22 @@ video{
 }
 .homeButton {
   display: inline-block;
-  background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("resources/computer.jpg") no-repeat;
+  background: linear-gradient(0deg,rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url("resources/computer.jpg") no-repeat;
   color: white;
   float:left;
   position:absolute;
   background-size: cover;
   overflow: hidden;
+  border-radius: 5px;
 }
 
 .homeButton_Container{
   position: relative;
-  height:750px;
-  width:1150px;
+  height:850px;
+  width:1550px;
   margin:auto;
   font-size: 48px;
-  /*background-color: #ffffff;
-  border: solid 30px #ffffff;*/
+
 }
 #Photography, #Coding, #Design{
   float:left;
@@ -93,7 +102,7 @@ video{
 /*Defaults */
 #Photography, #bigPhotography, #skinnyPhotography{
   height: 100%;
-  width: 49.5%;
+  width: 49.6%;
   top:0;
   right:0;
 }
@@ -101,41 +110,41 @@ video{
 #Coding, #skinnyCode, #shortCode, #bigCoding{
   top:0;
   left:0;
-  height:49.5%;
-  width:49.5%;
+  height:49.25%;
+  width:49.6%;
   background-position: right;
 }
 
 #Design, #skinnyDesign, #shortDesign, #bigDesign{
   bottom:0;
   left:0;
-  height:49.5%;
-  width:49.5%;
+  height:49.25%;
+  width:49.6%;
   background-position: right;
 }
 
 #bigPhotography, #bigDesign, #bigCoding {
-  background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.3)), url("resources/computer.jpg") no-repeat;
+  background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/computer.jpg") no-repeat;
   background-size: cover;
   z-index: 1;
 }
 /*Modify widths of sections*/
 #shortDesign, #shortCode, #bigDesign, #bigCoding, #bigPhotography{
-  width: 69.5%;
+  width: 74.5%;
 }
 
 #skinnyDesign, #skinnyCode, #skinnyPhotography{
-  width: 29.5%;
+  width: 24.5%;
 }
 
 /*Modify Heights */
 
 #shortDesign, #shortCode{
-  height: 34.5%;
+  height: 14.25%;
 }
 #bigDesign, #bigCoding{
   z-index: 1;
-  height:64.5%;
+  height:84.25%;
 }
 
 /*Transition Speeds*/
@@ -145,7 +154,7 @@ video{
 
 }
 
-a > span {
+span {
   position: absolute;
   bottom:10px;
 }
@@ -159,11 +168,38 @@ a > span {
 }
 
 body {
-  font-family: Avalon,"Lucida Sans", sans-serif;
+  font-family: Avenir,"Lucida Sans", sans-serif;
   background-color: whitesmoke;
   margin: 0;
   padding: 0;
   text-align: center;
+  height:1100px;
+  width:100%;
+
+}
+
+.footer{
+  position:relative;
+  float:left;
+  width:100%;
+  margin-top: 40px;
+}
+#footerText{
+  font-size: 14px;
+  float:left;
+  text-align: left;
+  margin-left: 100px;
+}
+
+#footerYear{
+  margin-right:15px;
+}
+
+#social_media_bar{
+ float:right;
+  text-align: right;
+  margin-top:15px;
+  margin-right:80px;
 }
 a > img {
   height: 50px;
