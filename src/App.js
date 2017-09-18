@@ -20,12 +20,12 @@ class Mainheader extends Component {
           <h2>Kito Pham</h2>
           {MainPages.map((page, index) => (
             <Link
-              key= {index}
+              key = {index}
               className="headerButton"
               //onClick ={()=>{this.props.changePage(index)}}
               to={"/"+ page.name}
               style={{ textDecoration: 'none', color: 'lightblue'}}>
-                {page.name}
+              {page.name}
 
             </Link>
           ))}
@@ -63,40 +63,47 @@ class Home extends Component{
 
   render() {
     return(
-      <div className = "Home_Container">
+      <div className = "Content_Container">
         <div className = "homeButton_Container">
 
           <Link id={this.sizeClasses[this.state.size][0]} className="homeButton"
-             //onClick ={()=>{this.props.changePage(1)}}
-             onMouseOver ={() =>{this.setState({size:1});
-             this.Box[0].play();}}
-             onMouseLeave={()=>{this.setState({size:0});
-             this.Box[0].pause(); this.Box[0].currentTime=0;}}
-                to={"/Coding"} style={{ textDecoration: 'none', color: 'white'}}>
-            <video ref = {(input) => {this.Box[0] = input}} loop muted>
+            //onClick ={()=>{this.props.changePage(1)}}
+                onMouseOver ={() =>{this.setState({size:1});
+                  this.Box[0].play();}}
+                onMouseLeave={()=>{this.setState({size:0});
+                  this.Box[0].pause(); this.Box[0].currentTime=0;}}
+                to={"/Projects"} style={{ textDecoration: 'none', color: 'white'}}>
+            <video ref = {(input) => {this.Box[0] = input}} muted>
               <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/mp4" />
               <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/ogg" />
             </video>
             <div className="videoOverlay"></div>
-              <span id="codingText">Coding</span>
+            <span id="codingText">Projects</span>
           </Link>
 
-          <Link id={this.sizeClasses[this.state.size][1]} className="homeButton" ref = {(input) => {this.Box[1] = input}}
-             //onClick ={()=>{this.props.changePage(2)}}
-             onMouseOver ={() =>{this.setState({size:2});}}
-             onMouseLeave={()=>{this.setState({size:0});}}
-                to={"/Design"} style={{ textDecoration: 'none', color: 'white'}}>
-            <span id="designText">Design</span>
+          <Link id={this.sizeClasses[this.state.size][1]} className="homeButton"
+            //onClick ={()=>{this.props.changePage(2)}}
+                onMouseOver ={() =>{this.setState({size:2});
+                  this.Box[1].play();}}
+                onMouseLeave={()=>{this.setState({size:0});
+                  this.Box[1].pause(); this.Box[1].currentTime=0;}}
+                to={"/About"} style={{ textDecoration: 'none', color: 'white'}}>
+            <video ref = {(input) => {this.Box[1] = input}} muted>
+              <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/mp4" />
+              <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/ogg" />
+            </video>
+            <div className="videoOverlay"></div>
+            <span id="designText">About</span>
           </Link>
 
           <Link id={this.sizeClasses[this.state.size][2]} className="homeButton"
-             //onClick ={()=>{this.props.changePage(1)}}
-             onMouseOver ={() =>{this.setState({size:3});
-               this.Box[2].play();}}
-             onMouseLeave={()=>{this.setState({size:0});
-               this.Box[2].pause(); this.Box[2].currentTime=0;}}
+            //onClick ={()=>{this.props.changePage(1)}}
+                onMouseOver ={() =>{this.setState({size:3});
+                  this.Box[2].play();}}
+                onMouseLeave={()=>{this.setState({size:0});
+                  this.Box[2].pause(); this.Box[2].currentTime=0;}}
                 to={"/Photography"} style={{ textDecoration: 'none', color: 'white'}}>
-            <video ref = {(input) => {this.Box[2] = input}} loop muted>
+            <video ref = {(input) => {this.Box[2] = input}} muted>
               <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/mp4" />
               <source src="http://students.washington.edu/kpham97/videoTemp.mp4" type="video/ogg" />
             </video>
@@ -118,6 +125,7 @@ class Mainfooter extends Component {
           <h2>Contact Me</h2>
           <ul>
             <li>Email: kpham97@live.com </li>
+            <li>Phone: (509) 619 - 4686</li>
           </ul>
         </div>
         <div id = "social_media_bar">
@@ -137,25 +145,81 @@ class Mainfooter extends Component {
   }
 }
 
+let codeProjects = [
+  {url:"testproject1", name : "Test Project1", type:"IOS App", technology:"Swift", img:"http://students.washington.edu/acequal/images/logo.jpg"},
+];
+
+let designProjects = [
+  {url:"candyfacts", name : "Candy Facts", type:"Infograph", technology:"Adobe Illustrator", img:"http://students.washington.edu/acequal/images/logo.jpg"},
+
+];
+
 class Coding extends Component {
-
   render(){
-
     return(
-      <div className= "project_container">
-         coding
+      <div className= "Content_Container">
+        <div id="coding_projects">
+          <h1>Apps & Websites</h1>
+          <ul className="projects">
+            {codeProjects.map((page, index) => (
+              <li key = {index}>
+              <Link
+                className="headerButton"
+                //onClick ={()=>{this.props.changePage(index)}}
+                to={"/Projects/dev/"+ page.url}
+                style={{ textDecoration: 'none', color: 'black'}}>
+                <img className="projectImage" src={page.img}/>
+                <strong>{page.name}</strong><br />
+                {page.type} : {page.technology}
+              </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div id="design_projects">
+          <h1>Design</h1>
+        <ul className="projects">
+          {designProjects.map((page, index) => (
+            <li key = {index}>
+              <Link
+                className="headerButton"
+                //onClick ={()=>{this.props.changePage(index)}}
+                to={"/projects/design/"+ page.url}
+                style={{ textDecoration: 'none', color: 'black'}}>
+                <img className="projectImage" src={page.img}/>
+                <strong>{page.name}</strong><br />
+                {page.type} : {page.technology}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        </div>
       </div>
     )
   }
 }
 
-class Design extends Component{
-
+class Project extends Component{
   render(){
-
     return(
-      <div className= "project_container">
-        design
+      <div className="Content_Container">
+        <Link to="/projects">back</Link>
+        <h1>{this.props.object.name}</h1>
+        <h4>{this.props.object.type}</h4>
+        <img className="pageImage" src={this.props.object.img}/>
+        <h3>Technologies</h3>
+        <ul>
+          <li>{this.props.object.technology}</li>
+        </ul>
+      </div>
+    )
+  }
+}
+class About extends Component{
+  render(){
+    return(
+      <div>
+        About Me
       </div>
     )
   }
@@ -163,9 +227,10 @@ class Design extends Component{
 
 var MainPages = [
   {Component : <Home />, name : "Home"},
-  {Component : <Coding />, name: "Coding"},
-  {Component : <Design />, name: "Design"},
+  {Component : <Coding />, name: "Projects"},
   {Component : <Photography />, name : "Photography"},
+  {Component : <About />, name: "About"}
+
 ];
 
 
@@ -179,7 +244,7 @@ class App extends Component {
     this.changePage = this.changePage.bind(this);
   }
   componentWillMount() {
-     console.log(MainPages[this.state.currentPage].name);
+    console.log(MainPages[this.state.currentPage].name);
 
   }
 
@@ -195,22 +260,24 @@ class App extends Component {
 
   render () {
     /*const currPage = () => {return(MainPages[this.state.currentPage].Component)};
-    console.log(this.state.currentPage);*/
+     console.log(this.state.currentPage);*/
     /*var component = React.cloneElement(currPage,
-      {changePage: this.changePage});*/
+     {changePage: this.changePage});*/
     return (
       <Router>
         <div>
-        <Mainheader changePage= {this.changePage}/>
+          <Mainheader changePage= {this.changePage}/>
           <Switch>
-          <Route exact path="/" component = {()=>{return <Home />}}/>
-          <Route path="/Home" component = {()=>{return <Home />}}/>
-          <Route path="/Coding" component = {()=>{return <Coding />}}/>
-          <Route path="/Photography" component = {()=>{return <Photography />}}/>
-          <Route path="/Design" component = {()=>{return <Design />}}/>
+            <Route exact path="/" component = {()=>{return <Home />}}/>
+            <Route exact path="/Home" component = {()=>{return <Home />}}/>
+            <Route exact path="/Projects" component = {()=>{return <Coding />}}/>
+            <Route exact path="/Photography" component = {()=>{return <Photography />}}/>
+            <Route exact path="/About" component = {()=>{return <About />}}/>
+            <Route exact path={"/Projects/dev/testproject1"} component = {()=>{return <Project object = {codeProjects[0]}/>}} />
+            <Route exact path={"/Projects/design/candyfacts"} component = {()=>{return <Project object = {designProjects[0]}/>}} />
             <Route component={()=>{return (<p> 404 page not found</p>)}}/>
           </Switch>
-        <Mainfooter changePage= {this.changePage}/>
+          <Mainfooter changePage= {this.changePage}/>
         </div>
       </Router>
     );
