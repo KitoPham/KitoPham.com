@@ -131,7 +131,6 @@ class Mainfooter extends Component {
           </ul>
         </div>
         <div id = "social_media_bar">
-          <div id = "footerYear">@2017</div>
           <a href = "https://www.facebook.com/KitoMahp">
             <img src={fblogo} className="social-media" alt="facebook" />
           </a>
@@ -141,6 +140,7 @@ class Mainfooter extends Component {
           <a href = "https://www.facebook.com/KitoMahp">
             <img src={fblogo} className="social-media" alt="facebook" />
           </a>
+          <div id = "footerYear">@2017</div>
         </div>
       </div>
     )
@@ -149,8 +149,8 @@ class Mainfooter extends Component {
 
 let codeProjects = [
   {url:"bitcoin", name : "BitStamp Mobile", type:"Android App",
-    technology:"Java, Retrofit, Android MPChart, Jackson", img:"http://students.washington.edu/acequal/images/logo.jpg",
-    brief: "Tasked during an interview to create an Android Application that acts as a simple bitcoin " +
+    technology:"Java, Retrofit, Android MPChart, Jackson", img:"http://students.washington.edu/kpham97/BitcoinTracker/BitHomePage.png",
+    brief: "Tasked during a challenge to create an Android Application that acts as a simple bitcoin " +
     "tracking app that notifies the user when prices go below a specific amount. This app has is made of " +
     "three sections an order book page that holds data for asks and data for bids, a graph that keeps track" +
     "of the price transactions over time and a notifications page that enables the user to choose to be notified " +
@@ -162,7 +162,10 @@ let codeProjects = [
     "show the new data. The notification made a new api call every hour using native JobService and WakefulBroadCastReceiver. " +
     "The graph was rendered using the Android MPChart Library. Order book charts were rendered a Recyclerview and Adaptor. This" +
     "app was completed over the course of a week",
-    pictures:[]},
+    pictures:["http://students.washington.edu/kpham97/BitcoinTracker/BitHomePage.png",
+      "http://students.washington.edu/kpham97/BitcoinTracker/BitGraph.png",
+      "http://students.washington.edu/kpham97/BitcoinTracker/BitNotificationPage.png",
+      "http://students.washington.edu/kpham97/BitcoinTracker/BitNotification.png"]},
   {url:"relive", name : "Relive", type:"Android App",
     technology:"Java, Picasso, Facebook SDK", img:"http://students.washington.edu/acequal/images/logo.jpg",
     brief: "",
@@ -207,12 +210,12 @@ class Coding extends Component {
                 //onClick ={()=>{this.props.changePage(index)}}
                 to={"/Projects/dev/"+ page.url}
                 style={{ textDecoration: 'none', color: 'black'}}>
-                <img className="projectImage" src={page.img}/>
+                <div className="projectImageWrap"><img className="projectImage" src={page.img}/></div>
+              </Link>
                 <div className="projectText">
                   <strong>{page.name}</strong><br />
                   {page.type} : {page.technology}
                 </div>
-              </Link>
               </li>
             ))}
           </ul>
@@ -256,7 +259,7 @@ class Project extends Component{
         <p className="summary">{this.props.object.summary}</p>
         {this.props.object.pictures.map((picture, index) => (
           <a href= {picture}>
-            <img src = {picture}/>
+            <img className="pageGallery" src = {picture}/>
           </a>))}
       </div>
     )
