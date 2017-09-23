@@ -24,7 +24,7 @@ class Mainheader extends Component {
               className="headerButton"
               //onClick ={()=>{this.props.changePage(index)}}
               to={"/"+ page.name}
-              style={{ textDecoration: 'none', color: 'lightblue'}}>
+              style={{ textDecoration: 'none', color: 'black'}}>
               {page.name}
 
             </Link>
@@ -126,6 +126,8 @@ class Mainfooter extends Component {
           <ul>
             <li>Email: kpham97@live.com </li>
             <li>Phone: (509) 619 - 4686</li>
+            <li>GitHub: github.com/kpham97</li>
+            <li>LinkedIn: linkedin.com/in/kpham97</li>
           </ul>
         </div>
         <div id = "social_media_bar">
@@ -146,11 +148,49 @@ class Mainfooter extends Component {
 }
 
 let codeProjects = [
-  {url:"testproject1", name : "Test Project1", type:"IOS App", technology:"Swift", img:"http://students.washington.edu/acequal/images/logo.jpg"},
+  {url:"bitcoin", name : "BitStamp Mobile", type:"Android App",
+    technology:"Java, Retrofit, Android MPChart, Jackson", img:"http://students.washington.edu/acequal/images/logo.jpg",
+    brief: "Tasked during an interview to create an Android Application that acts as a simple bitcoin " +
+    "tracking app that notifies the user when prices go below a specific amount. This app has is made of " +
+    "three sections an order book page that holds data for asks and data for bids, a graph that keeps track" +
+    "of the price transactions over time and a notifications page that enables the user to choose to be notified " +
+    "when a transaction goes below a specific amount",
+    summary:"To access the bitcoin data I used a retrofit client to make repeated calls to the bitstamp API v2 where" +
+    "I would store the data the data using a file client script implemented using Jackson object mapper to save the call from POJO" +
+    "in a text document. Using the same script I implemented a load method to re-access that data. For each of the app " +
+    "functions consisted of three steps: a first local load, and api call to gather new data, and then a update call to to " +
+    "show the new data. The notification made a new api call every hour using native JobService and WakefulBroadCastReceiver. " +
+    "The graph was rendered using the Android MPChart Library. Order book charts were rendered a Recyclerview and Adaptor. This" +
+    "app was completed over the course of a week",
+    pictures:[]},
+  {url:"relive", name : "Relive", type:"Android App",
+    technology:"Java, Picasso, Facebook SDK", img:"http://students.washington.edu/acequal/images/logo.jpg",
+    brief: "",
+    summary:"",
+    pictures:[]},
+  {url:"huskyquest", name : "Husky Quest", type:"iOS App",
+    technology:"Swift, Alamofire", img:"http://students.washington.edu/acequal/images/logo.jpg",
+    brief: "",
+    summary:"",
+    pictures:[]},
+  {url:"airquality", name : "Air Quality", type:"iOS App",
+    technology:"R, Shiny, GGPlot, Jsonlite, dplyr", img:"http://students.washington.edu/acequal/images/logo.jpg",
+    brief: "https://isenen.shinyapps.io/AirQualityProject/",
+    summary:"",
+    pictures:[]}
 ];
 
 let designProjects = [
-  {url:"candyfacts", name : "Candy Facts", type:"Infograph", technology:"Adobe Illustrator", img:"http://students.washington.edu/acequal/images/logo.jpg"},
+  {url:"candyfacts", name : "Candy Facts", type:"Infograph",
+    technology:"Adobe Illustrator", img:"http://students.washington.edu/acequal/images/logo.jpg",
+    brief: "",
+    summary:"",
+    pictures:["http://students.washington.edu/acequal/images/logo.jpg", "http://students.washington.edu/acequal/images/logo.jpg"]},
+  {url:"nextstep", name : "Next Step", type:"Prototype - Website",
+    technology:"AxureRP", img:"http://students.washington.edu/acequal/images/logo.jpg",
+    brief: "http://fmbbsg.axshare.com",
+    summary:"",
+    pictures:["http://students.washington.edu/acequal/images/logo.jpg", "http://students.washington.edu/acequal/images/logo.jpg"]},
 
 ];
 
@@ -164,13 +204,14 @@ class Coding extends Component {
             {codeProjects.map((page, index) => (
               <li key = {index}>
               <Link
-                className="headerButton"
                 //onClick ={()=>{this.props.changePage(index)}}
                 to={"/Projects/dev/"+ page.url}
                 style={{ textDecoration: 'none', color: 'black'}}>
                 <img className="projectImage" src={page.img}/>
-                <strong>{page.name}</strong><br />
-                {page.type} : {page.technology}
+                <div className="projectText">
+                  <strong>{page.name}</strong><br />
+                  {page.type} : {page.technology}
+                </div>
               </Link>
               </li>
             ))}
@@ -211,6 +252,12 @@ class Project extends Component{
         <ul>
           <li>{this.props.object.technology}</li>
         </ul>
+        <p className="brief">{this.props.object.brief}</p>
+        <p className="summary">{this.props.object.summary}</p>
+        {this.props.object.pictures.map((picture, index) => (
+          <a href= {picture}>
+            <img src = {picture}/>
+          </a>))}
       </div>
     )
   }
@@ -273,8 +320,15 @@ class App extends Component {
             <Route exact path="/Projects" component = {()=>{return <Coding />}}/>
             <Route exact path="/Photography" component = {()=>{return <Photography />}}/>
             <Route exact path="/About" component = {()=>{return <About />}}/>
-            <Route exact path={"/Projects/dev/testproject1"} component = {()=>{return <Project object = {codeProjects[0]}/>}} />
+
+            <Route exact path={"/Projects/dev/bitcoin"} component = {()=>{return <Project object = {codeProjects[0]}/>}} />
+            <Route exact path={"/Projects/dev/relive"} component = {()=>{return <Project object = {codeProjects[1]}/>}} />
+            <Route exact path={"/Projects/dev/huskyquest"} component = {()=>{return <Project object = {codeProjects[2]}/>}} />
+            <Route exact path={"/Projects/dev/airquality"} component = {()=>{return <Project object = {codeProjects[3]}/>}} />
+
             <Route exact path={"/Projects/design/candyfacts"} component = {()=>{return <Project object = {designProjects[0]}/>}} />
+            <Route exact path={"/Projects/design/nextstep"} component = {()=>{return <Project object = {designProjects[0]}/>}} />
+
             <Route component={()=>{return (<p> 404 page not found</p>)}}/>
           </Switch>
           <Mainfooter changePage= {this.changePage}/>

@@ -19,8 +19,8 @@
     text-align: left;
     margin-top: 10px;
     width: 100%;
-    background-color: whitesmoke;
     font-size: large;
+
 }
 
 .header *{
@@ -38,7 +38,7 @@
     font-size: xx-large;
 }
 
-.headerButton_Container > h2, .homeButton_Container{
+.homeButton_Container{
     background-color: whitesmoke;
 }
 
@@ -68,7 +68,7 @@
     margin-top: 5px;
     margin-bottom: 10px;
     padding-bottom: 150px;
-    animation: 2s ease-out 0s 1 fadein;
+    animation: 2s linear 0s 1 fadein;
 }
 
 video{
@@ -80,6 +80,7 @@ video{
 .videoOverlay{
     position:absolute;
     float:left;
+    /*background-color: rgba(50,100,256,.2);*/
     background-color: rgba(124,124,124,.3);
     height:100%;
     width:100%;
@@ -88,26 +89,29 @@ video{
 }
 
 .videoOverlay:hover{
+    /*background-color: rgba(40,150,256,.2);*/
+    /*background-color: rgba(124,124,124,.3);*/
     background-color: rgba(50,100,256,.2)
 }
 .homeButton {
     display: inline-block;
-    background: linear-gradient(0deg,rgba(124,124,124,.3),rgba(124,124,124,.3)), url("resources/computer.jpg") no-repeat;
+    /*background: linear-gradient(0deg,rgba(124,124,124,.3),rgba(124,124,124,.3)), url("resources/computer.jpg") no-repeat;*/
     color: white;
     float:left;
     position:absolute;
     background-size: cover;
     overflow: hidden;
-    border-radius: 5px;
+
 }
 
 .homeButton_Container{
     position: relative;
     height:808px;
     width:1570px;
-    margin:auto;
+    max-width: 95%;
+    margin: auto;
     font-size: 48px;
-
+    box-shadow: 20px 20px 20px rgba(120,120,120,.3);
 }
 #Photography, #Coding, #Design{
     float:left;
@@ -141,7 +145,7 @@ video{
 }
 
 #bigPhotography, #bigDesign, #bigCoding {
-    background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/computer.jpg") no-repeat;
+    /*background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/computer.jpg") no-repeat;*/
     background-size: cover;
     z-index: 1;
 }
@@ -167,21 +171,23 @@ video{
 /*Transition Speeds*/
 #Design, #skinnyDesign, #shortDesign, #bigDesign, #Coding, #skinnyCode, #shortCode,
 #bigCoding,#Photography, #skinnyPhotography, #shortPhotographyTop, #bigPhotography{
-    transition: 1s;
+    transition: ease-out 1s;
 
 }
 
 span {
     position: absolute;
     bottom:10px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgba(125,125,125,.5);
 }
 
 #photoText{
-    right: 20px;
+    right: 10px;
 }
 
 #codingText, #designText{
-    left: 20px;
+    left: 10px;
 }
 
 body {
@@ -202,7 +208,7 @@ body {
 /*Footer */
 .footer{
     position:absolute;
-    height:125px;
+    height:150px;
     width:100%;
     margin-top: 10px;
     clear:left;
@@ -220,16 +226,18 @@ body {
 }
 
 #social_media_bar{
+    position: absolute;
     float:right;
     text-align: right;
-    margin-top:15px;
+    bottom:0;
+    right:0;
     margin-right:100px;
 
 }
 
 a > img {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
 }
 /* Projects Page*/
 .projects_container{
@@ -240,16 +248,37 @@ a > img {
 }
 #coding_projects, #design_projects{
     overflow: auto;
+    padding-bottom: 20px;
 }
 .projects > li{
     list-style: none;
-    margin:50px;
+    margin:15px;
+    padding:25px;
     position:relative;
     width: 100%;
     max-width: 400px;
     float:left;
     font-size: large;
     line-height: 30px;
+    box-shadow: 10px 10px 15px rgba(120,120,120,.3);
+}
+
+.projects > li > a{
+    overflow: auto;
+}
+
+.projects>li:hover{
+    margin:0;
+    padding:40px;
+    box-shadow: 10px 10px 50px rgba(40,40,126, .7);
+}
+
+.projectImage{
+}
+
+.projectText{
+    margin-top: 10px;
+    height:100px;
 }
 
 h1{
