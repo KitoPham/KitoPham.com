@@ -1,9 +1,8 @@
 /*Header css*/
 .header-logo {
     animation: App-logo-spin infinite 20s linear;
-    height:50px;
-    margin-left: 20px;
-    float:left;
+    height:35px;
+    padding: 15px;
 }
 
 @keyframes App-logo-spin {
@@ -12,35 +11,36 @@
 }
 
 .header {
-    z-index: 2;
-    /*position:fixed;
+    /*z-index: 2;
+    position:fixed;
     top:0;*/
     color: black;
     text-align: left;
-    margin-top: 10px;
-    width: 100%;
+    width: 95%;
     font-size: large;
-
+    line-height: 50px;
+    margin: auto;
 }
 
 .header *{
-    display:inline;
+    display: inline;
+    vertical-align: middle;
+}
+.headerButton_Container *{
+    display: inline-flex;
 }
 .header > div {
-    line-height: 50px;
-    margin: 0 0 0 10px;
+    /*margin: 0 0 0 10px;*/
 
 }
 
-.headerButton_Container > h2 {
+.header > h2 {
     color: black;
     padding: 0;
     font-size: xx-large;
+    margin: 0 20px 0 20px;
 }
 
-.homeButton_Container{
-    background-color: whitesmoke;
-}
 
 .App-intro {
     font-size: large;
@@ -50,7 +50,7 @@
 }
 
 .headerButton_Container * {
-    margin: 0 20px 0;
+    margin: 0 20px 0 20px;
 }
 
 
@@ -66,22 +66,23 @@
 
 .Content_Container{
     margin-top: 5px;
-    margin-bottom: 10px;
-    padding-bottom: 150px;
+    margin-bottom: 30px;
+    /*padding-bottom: 150px;*/
     animation: 2s linear 0s 1 fadein;
+    clear:left
 }
 
 video{
     z-index: -1;
-    min-width:1200px;
-    min-height:1200px;
+    min-width:70vw;
+    min-height:60vh;
 }
 
 .videoOverlay{
     position:absolute;
     float:left;
     /*background-color: rgba(50,100,256,.2);*/
-    background-color: rgba(124,124,124,.3);
+    background-color: rgba(40,40,124,.3);
     height:100%;
     width:100%;
     top: 0;
@@ -112,6 +113,9 @@ video{
     margin: auto;
     font-size: 48px;
     box-shadow: 20px 20px 20px rgba(120,120,120,.3);
+}
+.homeButton_Container{
+    background-color: whitesmoke;
 }
 #Photography, #Coding, #Design{
     float:left;
@@ -175,11 +179,14 @@ video{
 
 }
 
-span {
+.homeButtonText {
     position: absolute;
     bottom:10px;
     padding: 10px 20px 10px 20px;
     background-color: rgba(125,125,125,.5);
+    word-wrap: break-word;
+    max-width: 85%;
+    font-size: 1em;
 }
 
 #photoText{
@@ -207,18 +214,19 @@ body {
 
 /*Footer */
 .footer{
-    position:absolute;
-    height:150px;
-    width:100%;
+    /*position:absolute;*/
+    /*bottom:0;
+    height:150px;*/
+    width:60%;
     margin-top: 10px;
     clear:left;
-    bottom:0;
+    padding: 10px;
 }
 #footerText{
     font-size: 14px;
     float:left;
     text-align: left;
-    margin-left: 100px;
+    /*margin-left: 100px;*/
 }
 
 #footerYear{
@@ -228,12 +236,12 @@ body {
 #social_media_bar{
     float:left;
     clear:left;
-    margin-left: 100px;
+    /*margin-left: 100px;*/
 }
 
-a > img {
-    height: 100px;
-    width: 100px;
+#social_media_bar img {
+    height: 50px;
+    width: 50px;
 }
 /* Projects Page*/
 .projects_container{
@@ -266,7 +274,7 @@ a > img {
     margin:0;
     padding:25px;
     padding-bottom: 30px;
-    box-shadow: 10px 10px 50px rgba(40,40,126, .7);
+    box-shadow: 10px 10px 50px rgba(40,40,126,.7);
     transition: .2s ease-out;
 
 }
@@ -276,9 +284,14 @@ a > img {
     margin:25px;
     max-width: 425px;
     max-height: 400px;
+    min-width: 85px;
+    min-height: 80px;
     width:100%;
     height:100%;
     margin-bottom: 30px;
+
+}
+.projectImage{
     box-shadow: 20px 20px 20px rgba(120,120,120,.3);
 }
 
@@ -287,16 +300,88 @@ a > img {
     margin:0px 25px 25px 25px;
 }
 
-h1{
-    color:black;
-    margin-top: 40px;
-    text-align: center;
+.pageImage, .technology, h1, h4,.brief, .pageLink{
+    margin-left: 15%;
+}
+.pageImage{
+    padding: 20px;
+    /*box-shadow: 20px 20px 50px rgba(120,120,120,.5);*/
+    float:left;
+}
+.technology{
+    float:left;
+    font-size: 1.1em;
+    margin-top: 50px;
 }
 
+.backbutton{
+    margin-left: 10%;
+    text-decoration: none;
+}
+.backbutton img{
+    max-width: 1%;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.backbutton img:hover, .pageGalleryImage:hover{
+    background-color: rgba(50,100,256,.4);
+}
+h1{
+    color:black;
+    text-align: left;
+}
+
+h4{
+}
+
+.pageLink{
+    clear:left;
+    float:left;
+}
+.brief{
+    clear:left;
+    width: 30%;
+    float:left;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+.summary{
+    margin:0 20px 100px 20px;
+    width: 30%;
+    float:left;
+    line-height: 30px;
+
+}
 .pageGallery{
+    clear:left;
+    width:90%;
+    margin:auto;
+}
+
+.pageGalleryImage{
     height:auto;
     width:auto;
-    max-width: 400px;
-    max-height: 800px;
+    max-width: 30%;
+    padding:1%;
     object-fit: contain;
+
+}
+.pageGalleryImage:hover{
+}
+
+.about{
+    margin:20px 15% 200px 15%;
+    min-height: 80%;
+}
+
+.aboutPic{
+    max-width: 300px;
+    float:right;
+}
+
+.aboutText{
+    padding-top: 5%;
+    max-width: 70%;
+    line-height: 30px;
 }
