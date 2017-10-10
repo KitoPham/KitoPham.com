@@ -27,7 +27,7 @@ class Mainheader extends Component {
               key = {index}
               className="headerButton"
               //onClick ={()=>{this.props.changePage(index)}}
-              to={"/"+ page.name}
+              to={process.env.PUBLIC_URL + "/"+ page.name}
               style={{ textDecoration: 'none', color: 'black'}}>
               {page.name}
             </Link>
@@ -75,7 +75,7 @@ class Home extends Component{
                   this.Box[0].play();}}
                 onMouseLeave={()=>{this.setState({size:0});
                   this.Box[0].pause(); this.Box[0].currentTime=0;}}
-                to={"/Projects"} style={{ textDecoration: 'none', color: 'white'}}>
+                to={process.env.PUBLIC_URL + '/Projects'} style={{ textDecoration: 'none', color: 'white'}}>
             <video ref = {(input) => {this.Box[0] = input}} muted>
               <source src={projectVideo} type="video/mp4" />
               <source src={projectVideo} type="video/ogg" />
@@ -90,7 +90,7 @@ class Home extends Component{
                   this.Box[1].play();}}
                 onMouseLeave={()=>{this.setState({size:0});
                   this.Box[1].pause(); this.Box[1].currentTime=0;}}
-                to={"/About"} style={{ textDecoration: 'none', color: 'white'}}>
+                to={process.env.PUBLIC_URL + '/About'} style={{ textDecoration: 'none', color: 'white'}}>
             <video ref = {(input) => {this.Box[1] = input}} muted>
               <source src={testVideo} type="video/mp4" />
               <source src={testVideo} type="video/ogg" />
@@ -105,7 +105,7 @@ class Home extends Component{
                   this.Box[2].play();}}
                 onMouseLeave={()=>{this.setState({size:0});
                   this.Box[2].pause(); this.Box[2].currentTime=0;}}
-                to={"/Photography"} style={{ textDecoration: 'none', color: 'white'}}>
+                to={process.env.PUBLIC_URL + '/Photography'} style={{ textDecoration: 'none', color: 'white'}}>
             <video ref = {(input) => {this.Box[2] = input}} muted>
               <source src={testVideo} type="video/mp4" />
               <source src={testVideo} type="video/ogg" />
@@ -281,7 +281,7 @@ class Coding extends Component {
               <li key = {index}>
               <Link
                 //onClick ={()=>{this.props.changePage(index)}}
-                to={"/Projects/dev/"+ page.url}
+                to={process.env.PUBLIC_URL + '/Projects/dev/'+ page.url}
                 style={{ textDecoration: 'none', color: 'black'}}>
                 <div className="projectImageWrap"><img className="projectImage" src={page.img} alt={page.img}/></div>
               </Link>
@@ -300,7 +300,7 @@ class Coding extends Component {
               <li key = {index}>
                 <Link
                   //onClick ={()=>{this.props.changePage(index)}}
-                  to={"/Projects/dev/"+ page.url}
+                  to={process.env.PUBLIC_URL + '/Projects/dev/'+ page.url}
                   style={{ textDecoration: 'none', color: 'black'}}>
                   <div className="projectImageWrap"><img className="projectImage" src={page.img} alt={page.img}/></div>
                 </Link>
@@ -320,7 +320,7 @@ class Coding extends Component {
               <Link
                 className="headerButton"
                 //onClick ={()=>{this.props.changePage(index)}}
-                to={"/projects/design/"+ page.url}
+                to={process.env.PUBLIC_URL + '/projects/design/'+ page.url}
                 style={{ textDecoration: 'none', color: 'black'}}>
                 <img className="projectImage" src={page.img} alt={page.img}/>
                 <strong>{page.name}</strong><br />
@@ -437,20 +437,20 @@ class App extends Component {
         <div>
           <Mainheader changePage= {this.changePage}/>
           <Switch>
-            <Route exact path="/" component = {()=>{return <Home />}}/>
-            <Route exact path="/Home" component = {()=>{return <Home />}}/>
-            <Route exact path="/Projects" component = {()=>{return <Coding />}}/>
-            <Route exact path="/Photography" component = {()=>{return <Photography />}}/>
-            <Route exact path="/About" component = {()=>{return <About />}}/>
+            <Route exact path={process.env.PUBLIC_URL + '/'} component = {()=>{return <Home />}}/>
+            <Route exact path={process.env.PUBLIC_URL + '/Home'} component = {()=>{return <Home />}}/>
+            <Route exact path={process.env.PUBLIC_URL + '/Projects'} component = {()=>{return <Coding />}}/>
+            <Route exact path={process.env.PUBLIC_URL + '/Photography'} component = {()=>{return <Photography />}}/>
+            <Route exact path={process.env.PUBLIC_URL + '/About'} component = {()=>{return <About />}}/>
 
-            <Route exact path={"/Projects/dev/bitcoin"} component = {()=>{return <Project object = {codeProjects[0]}/>}} />
-            <Route exact path={"/Projects/dev/relive"} component = {()=>{return <Project object = {codeProjects[1]}/>}} />
-            <Route exact path={"/Projects/dev/huskyquest"} component = {()=>{return <Project object = {codeProjects[2]}/>}} />
+            <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/bitcoin'} component = {()=>{return <Project object = {codeProjects[0]}/>}} />
+            <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/relive'} component = {()=>{return <Project object = {codeProjects[1]}/>}} />
+            <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/huskyquest'} component = {()=>{return <Project object = {codeProjects[2]}/>}} />
 
-            <Route exact path={"/Projects/dev/airquality"} component = {()=>{return <Project object = {websiteProjects[0]}/>}} />
-            <Route exact path={"/Projects/dev/nextstep"} component = {()=>{return <Project object = {websiteProjects[1]}/>}} />
+            <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/airquality'} component = {()=>{return <Project object = {websiteProjects[0]}/>}} />
+            <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/nextstep'} component = {()=>{return <Project object = {websiteProjects[1]}/>}} />
 
-            <Route exact path={"/Projects/design/candyfacts"} component = {()=>{return <Project object = {designProjects[0]}/>}} />
+            <Route exact path={process.env.PUBLIC_URL + '/Projects/design/candyfacts'} component = {()=>{return <Project object = {designProjects[0]}/>}} />
 
 
             <Route component={()=>{return (<p> 404 page not found</p>)}}/>

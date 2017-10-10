@@ -20,6 +20,7 @@
     font-size: large;
     line-height: 50px;
     margin: auto;
+    box-shadow: 0px 10px 40px rgba(0,0,0,.125);
 }
 
 .header *{
@@ -45,8 +46,13 @@
 .App-intro {
     font-size: large;
 }
-.headerButton, .homeButton{
+.headerButton, .homeButton {
     cursor: pointer;
+}
+
+.activeHeaderButton{
+    color:black;
+    text-decoration: underline;
 }
 
 .headerButton_Container * {
@@ -110,7 +116,7 @@ video{
     height:808px;
     width:1570px;
     max-width: 95%;
-    margin: auto;
+    margin: 1.5vw 2.5vw 2.5vw 2.5vw;
     font-size: 48px;
     box-shadow: 20px 20px 20px rgba(120,120,120,.3);
 }
@@ -247,12 +253,14 @@ body {
 .projects_container{
     width:100%;
     padding-bottom: 150px;
+    overflow: hidden;
 }
 .projects_container > ul{
 }
 #coding_projects, #design_projects{
     overflow: auto;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
 }
 .projects > li{
     list-style: none;
@@ -275,7 +283,7 @@ body {
     padding:25px;
     padding-bottom: 30px;
     box-shadow: 10px 10px 50px rgba(40,40,126,.7);
-    transition: .2s ease-out;
+    /*transition: .2s ease-out;*/
 
 }
 
@@ -330,6 +338,7 @@ body {
 h1{
     color:black;
     text-align: left;
+    margin-top: 75px;
 }
 
 h4{
@@ -371,17 +380,19 @@ h4{
 }
 
 .about{
-    margin:20px 15% 200px 15%;
+    margin:40px 15% 200px 15%;
     min-height: 80%;
 }
 
 .aboutPic{
     max-width: 300px;
     float:right;
+    border-radius: 5px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 .aboutText{
-    padding-top: 5%;
     max-width: 70%;
     line-height: 30px;
 }
