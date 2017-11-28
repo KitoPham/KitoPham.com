@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import linkedinlogo from './logo.svg';
-import fblogo from './logo.svg';
-import logo from './resources/KPLogo1.png';
+import linkedinlogo from './resources/linkedin-icon.png';
+import fblogo from './resources/fb-icon.png';
+import githublogo from './resources/github-icon.png';
+import logo from './resources/KPLogo2.png';
 import backicon from './resources/backicon.png';
 import testVideo from './resources/videoTemp.mp4';
 import projectVideo from './resources/codingVideo.mp4';
 import aboutPhoto from './resources/aboutPhoto.jpg';
+import comingSoonImage from './resources/comingsoon.png';
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 //import ReactDOM from 'react-dom';
 
@@ -20,6 +22,8 @@ class Mainheader extends Component {
     return (
       <div className="header">
         <img src={logo} className="header-logo" alt="logo" />
+
+        <div>
         <h2>Kito Pham</h2>
         <div className = "headerButton_Container">
           {MainPages.map((page, index) => (
@@ -28,10 +32,11 @@ class Mainheader extends Component {
               className="headerButton"
               //onClick ={()=>{this.props.changePage(index)}}
               to={process.env.PUBLIC_URL + "/"+ page.name}
-              style={{ textDecoration: 'none', color: 'black'}}>
+            >
               {page.name}
             </Link>
           ))}
+        </div>
         </div>
       </div>
     );
@@ -42,8 +47,8 @@ class Photography extends Component {
   render() {
     return (
       <div>
-        <h1> photography </h1>
-        <p> under construction </p>
+        <h1> Photography </h1>
+        <h1> Sorry! Still under construction!  </h1>
       </div>
     )
   }
@@ -62,6 +67,7 @@ class Home extends Component{
     ["shortCode", "bigDesign", "skinnyPhotography"],
     ["skinnyCode", "skinnyDesign", "bigPhotography"]
   ]
+
   Box = [3];
 
   render() {
@@ -75,7 +81,7 @@ class Home extends Component{
                   this.Box[0].play();}}
                 onMouseLeave={()=>{this.setState({size:0});
                   this.Box[0].pause(); this.Box[0].currentTime=0;}}
-                to={process.env.PUBLIC_URL + '/Projects'} style={{ textDecoration: 'none', color: 'white'}}>
+                to={process.env.PUBLIC_URL + '/Projects'} style={{ textDecoration: 'none', color: 'white', backgroundSize:'1200px'}}>
             <video ref = {(input) => {this.Box[0] = input}} muted>
               <source src={projectVideo} type="video/mp4" />
               <source src={projectVideo} type="video/ogg" />
@@ -90,7 +96,7 @@ class Home extends Component{
                   this.Box[1].play();}}
                 onMouseLeave={()=>{this.setState({size:0});
                   this.Box[1].pause(); this.Box[1].currentTime=0;}}
-                to={process.env.PUBLIC_URL + '/About'} style={{ textDecoration: 'none', color: 'white'}}>
+                to={process.env.PUBLIC_URL + '/About'} style={{ textDecoration: 'none', color: 'white', backgroundSize:'1200px', backgroundOrigin:"-200px"}}>
             <video ref = {(input) => {this.Box[1] = input}} muted>
               <source src={testVideo} type="video/mp4" />
               <source src={testVideo} type="video/ogg" />
@@ -105,7 +111,7 @@ class Home extends Component{
                   this.Box[2].play();}}
                 onMouseLeave={()=>{this.setState({size:0});
                   this.Box[2].pause(); this.Box[2].currentTime=0;}}
-                to={process.env.PUBLIC_URL + '/Photography'} style={{ textDecoration: 'none', color: 'white'}}>
+                to={process.env.PUBLIC_URL + '/Photography'} style={{ textDecoration: 'none', color: 'white', backgroundSize:'1500px'}}>
             <video ref = {(input) => {this.Box[2] = input}} muted>
               <source src={testVideo} type="video/mp4" />
               <source src={testVideo} type="video/ogg" />
@@ -120,31 +126,32 @@ class Home extends Component{
   }'/'
 }
 
+/* <div id ="footerText">
+ <h2>Contact Me</h2>
+ <ul>
+ <li>Email: kpham97@live.com </li>
+ <li>Phone: (509) 619 - 4686</li>
+ <li>GitHub: github.com/kpham97</li>
+ <li>LinkedIn: linkedin.com/in/kpham97</li>
+ </ul>
+ </div>*/
+
 class Mainfooter extends Component {
   render() {
     return (
       <div className="footer">
-        <div id ="footerText">
-          <h2>Contact Me</h2>
-          <ul>
-            <li>Email: kpham97@live.com </li>
-            <li>Phone: (509) 619 - 4686</li>
-            <li>GitHub: github.com/kpham97</li>
-            <li>LinkedIn: linkedin.com/in/kpham97</li>
-          </ul>
-        </div>
         <div id = "social_media_bar">
           <a href = "https://www.facebook.com/KitoMahp">
             <img src={fblogo} className="social-media" alt="facebook" />
           </a>
-          <a href = "https://www.facebook.com/KitoMahp">
+          <a href = "https://www.linkedin.com/in/kitopham">
             <img src={linkedinlogo} className="social-media" alt="linkedin" />
           </a>
-          <a href = "https://www.facebook.com/KitoMahp">
-            <img src={fblogo} className="social-media" alt="facebook" />
+          <a href = "https://www.github.com/kpham97">
+            <img src={githublogo} className="social-media" alt="facebook" />
           </a>
-          <div id = "footerYear">@2017</div>
         </div>
+        <div id = "footerYear">@2017</div>
       </div>
     )
   }
@@ -194,12 +201,12 @@ let codeProjects = [
       "http://students.washington.edu/kpham97/relive/6.png",
       "http://students.washington.edu/kpham97/relive/7.png"],
     link:"https://github.com/kpham97/Android-Project-ReLive"},
-  {url:"huskyquest", name : "Husky Quest", type:"iOS App",
+  /*{url:"huskyquest", name : "Husky Quest", type:"iOS App",
     technology:["Swift", "Alamofire"], img:"http://students.washington.edu/acequal/images/logo.jpg",
     brief: "",
     summary:"",
     pictures:[],
-    link:"https://github.com/kpham97/HuskyQuest"}
+    link:"https://github.com/kpham97/HuskyQuest"}*/
 ];
 
 let websiteProjects = [
@@ -291,6 +298,15 @@ class Coding extends Component {
                 </div>
               </li>
             ))}
+            <li className="comingSoon">
+              <div
+                style={{ textDecoration: 'none', color: 'black'}}>
+                <div className="projectImageWrap"><img className="projectImage" src={comingSoonImage} alt="coming soon"/></div>
+              </div>
+              <div className="projectText">
+                <strong>More works soon . . .</strong><br />
+              </div>
+            </li>
           </ul>
         </div>
         <div id="coding_projects">
@@ -388,6 +404,13 @@ class About extends Component{
             varying experiences have given me the skill-set to be able to handle a wide range of roles and responsibilities
             and the ability to think on my feet to flourish best in environments that are always changing.
           </p>
+          <h2>Contact Me</h2>
+          <ul>
+            <li>Email: kpham97@live.com </li>
+            <li>Phone: (509) 619 - 4686</li>
+            <li>GitHub: github.com/kpham97</li>
+            <li>LinkedIn: linkedin.com/in/kpham97</li>
+          </ul>
         </div>
       </div>
     )
