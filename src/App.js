@@ -140,13 +140,22 @@ class Mainfooter extends Component {
         )
     }
 }
+class Design extends Component {
+  render() {
+    return (
+      <div>
+        <h1> Design </h1>
+        <p> under construction </p>
+      </div>
+    )
+  }
+}
 
 var MainPages = [
     {Component : <Home />, name : "Home"},
     {Component : <Coding />, name: "Projects"},
     {Component : <Photography />, name : "Photography"},
     {Component : <About />, name: "About"}
-
 ];
 
 class App extends Component {
