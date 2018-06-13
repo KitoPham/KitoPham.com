@@ -104,7 +104,7 @@
     margin-top: 5px;
     margin-bottom: 30px;
     /*padding-bottom: 150px;*/
-    animation: 2s linear 0s 1 fadein;
+    animation: 1s linear 0s 1 fadein;
     clear:left
 }
 
@@ -178,7 +178,6 @@ video{
     left:0;
     height:49.25%;
     width:49.6%;
-    background-position: right;
   background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/codeImage.jpg") no-repeat;
 }
 
@@ -187,8 +186,7 @@ video{
     left:0;
     height:49.25%;
     width:49.6%;
-    background-position: right;
-  background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/aboutCover.jpg") no-repeat;
+    background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/aboutCover.jpg") no-repeat, left center;
 }
 
 #bigPhotography, #bigDesign, #bigCoding {
@@ -276,8 +274,11 @@ body {
     position:relative;
 }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 /*Footer */
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 .footer{
     /*position:absolute;*/
     /*bottom:0;
@@ -304,6 +305,7 @@ body {
 }
 
 #social_media_bar{
+  width:100%;
   text-align: center;
     /*float:left;
     clear:left;*/
@@ -315,70 +317,72 @@ body {
     width: 50px;
     margin: 5px;
 }
-/* Projects Page*/
-.projects_container{
-    width:100%;
-    padding-bottom: 150px;
-    overflow: hidden;
-}
-.projects_container > ul{
-}
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+/* Projects LIST Page*/
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+
 #coding_projects, #design_projects{
     overflow: auto;
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(0,0,0,.125);
 }
-.projects > li{
-    list-style: none;
-    /*margin:15px;*/
-    /*padding:25px;*/
-    position:relative;
-    width: 100%;
-    max-width: 475px;
-    float:left;
-    font-size: large;
-    line-height: 30px;
-}
-
-.projects > li > a{
-    overflow: auto;
-}
-
-.projectImage:hover{
-    margin:0;
-    padding:25px;
-    padding-bottom: 30px;
-    box-shadow: 10px 10px 50px rgba(40,40,126,.7);
-    /*transition: .2s ease-out;*/
+.projects{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width:95%;
+  overflow: hidden;
 
 }
 
-.projectImage, .pageImage{
-    object-fit: contain;
-    margin:25px;
-    max-width: 425px;
-    max-height: 400px;
-    min-width: 85px;
-    min-height: 80px;
-    width:100%;
-    height:100%;
-    margin-bottom: 30px;
+.projects>li{
+  list-style: none;
+  flex-basis: 0;
+  margin:20px;
+  min-width: 330px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
 
+
+.projectImageWrap {
+  max-width: 330px;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  box-shadow: 5px 10px 40px lightgray;
 }
 .projectImage{
-   box-shadow: 20px 20px 20px rgba(120,120,120,.3);
+  max-height: 188px;
+  max-width:248px;
+  height: auto;
+  width: auto;
+  flex:none;
+}
+.projectImage:hover{
+  max-height: 250px;
+  max-width: 330px;
+  transition: ease-out .5s;;
 }
 
-.projectText{
-    height:100px;
-    margin:0px 25px 25px 25px;
+.projectText {
 }
-@media(max-width:600px) {
+
+@media(max-width:780px) {
   .projects {
     overflow:hidden;
     max-width: 100%;
     margin:0;
     padding:0;
+    justify-content: center;
   }
   .projectImage{
     max-width: 100%;
@@ -388,6 +392,11 @@ body {
 
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//PROJECT PAGE DETAILS
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 .pageImage, .technology, h1, h4,.brief, .pageLink{
     margin-left: 15%;
 }
@@ -395,6 +404,7 @@ body {
     padding: 20px;
     /*box-shadow: 20px 20px 50px rgba(120,120,120,.5);*/
     float:left;
+    max-width: 350px;
 }
 .technology{
     float:left;
@@ -446,13 +456,17 @@ h4{
     clear:left;
     width:90%;
     margin:auto;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center
 }
 
 .pageGalleryImage{
     height:auto;
     width:auto;
-    max-width: 30%;
-    padding:1%;
+    max-width: 300px;
+  max-height: 400px;
+    padding:25px;
     object-fit: contain;
 
 }
@@ -465,13 +479,10 @@ h4{
 }
 
 .aboutPic{
-    max-width: 300px;
+    max-width: 25%;
+  max-height: 400px;
     float:right;
-    border-radius: 5px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
 }
-
 .aboutText{
     max-width: 70%;
     line-height: 30px;
