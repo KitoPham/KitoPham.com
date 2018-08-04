@@ -1,6 +1,44 @@
 import cryptoTrack from '../resources/cryptoTracker.png';
+import reLive from '../resources/reLive.png';
+import thereLogo from '../resources/THERE - Black.png'
 
-let codeProjects = [
+let codeProjects = [{url:"There", name: "There", type: "iOS App",
+    technology:["Swift", "Here API", "Beacons", "Core Location", "Firebase"], img: thereLogo,
+    brief:"For our graduation project, wanted to create an indoor navigation app that allowed event organizers to better " +
+    "control the experience " +
+    "of their conference while also letting event attendees be able to find their way from here to there in the chaos " +
+    "of massive events. Sponsored by Here Technologies, we created web & mobile app to tackle on this challenging task over the course " +
+    "of a few months.",
+    summary:"My task for this project was to lead the development of our mobile application in our project. Our general flow " +
+    "became an event organizer would use our web end to digitally create their conference, then they would place beacons around " +
+    "a venue. Next they would then automatically " +
+    "record beacon positions by walking around with their phone thereby creating a radio map that would be attached to their event. " +
+    "The mobile app would then use the radio map to detect a user's " +
+    "position based on the multitude of beacon signals around them at any given point. The user would then be able to " +
+    "pick a booth and the app would navigate them towards that position. Unfortunately towards the end of the project, there " +
+    "were issues in regard to the backend service we were using which resulted in our data being corrupt. What can be successfully shown " +
+    "is an implementation of the Here Map engine along with custom map controls and the ability for the mobile app to programmatically " +
+    "reference events created by the web interface. A navigation screen not shown in the screens is available however, user location is " +
+    "drawing from GPS due to inability to acquire the correct radio map data. This project was a massive learning experience with working firsthand " +
+    "with an international corporation as we went through bi-weekly meetings with our Sponsor and worked with teams from their foreign offices " +
+    "For more information on this Graduation Project click on the See More above",
+    sections:[
+        {sectionname: "Screens", sectiondescr:"",
+            pictures:["http://students.washington.edu/kpham97/thereScreenshots/1.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/2.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/3.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/4.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/5.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/6.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/7.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/8.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/9.png",
+                "http://students.washington.edu/kpham97/thereScreenshots/10.png"
+            ]
+        }],
+    link:"http://heretothere.xyz/"
+    },
+
     {url:"bitcoin", name : "Cryptocurrency Tracker", type:"Android App",
         technology:["Java", "Retrofit", "Android MPChart", "Jackson"], img:cryptoTrack,
         brief: "Tasked over the course of a week during a challenge to create an Android Application that acts as a simple bitcoin " +
@@ -14,13 +52,14 @@ let codeProjects = [
         "functions consisted of three steps: a first local load, and api call to gather new data, and then a update call to to " +
         "show the new data. The notification made a new api call every hour using native JobService and WakefulBroadCastReceiver. " +
         "The graph was rendered using the Android MPChart Library. Order book charts were rendered a Recyclerview and Adaptor.",
-        pictures:["http://students.washington.edu/kpham97/BitcoinTracker/BitHomePage.png",
-            "http://students.washington.edu/kpham97/BitcoinTracker/BitGraph.png",
-            "http://students.washington.edu/kpham97/BitcoinTracker/BitNotificationPage.png",
-            "http://students.washington.edu/kpham97/BitcoinTracker/BitNotification.png"],
+        sections:[
+            {sectionname: "Screens", sectiondescr: "", pictures:["http://students.washington.edu/kpham97/BitcoinTracker/BitHomePage.png",
+                                                                    "http://students.washington.edu/kpham97/BitcoinTracker/BitGraph.png",
+                                                                    "http://students.washington.edu/kpham97/BitcoinTracker/BitNotificationPage.png",
+                                                                    "http://students.washington.edu/kpham97/BitcoinTracker/BitNotification.png"]}],
         link:"https://github.com/kpham97/ILoveZappos"},
     {url:"relive", name : "Relive", type:"Android App",
-        technology:["Java", "Picasso", "Facebook SDK"], img:"http://students.washington.edu/kpham97/androidImage.png",
+        technology:["Java", "Picasso", "Facebook SDK"], img:reLive,
         brief: "Tasked in Android Mobile Development class with a small team of people to develop our own multi-page app. We " +
         "decided on playing around with the Facebook API to create a fun tool for users to view old statuses of friends. " +
         "We wanted the app to have several types of features to accompany bringing up old friends, the ability to separate out " +
@@ -30,19 +69,22 @@ let codeProjects = [
         "receive access to the facebook api we installed the facebook sdk and acquired a private api key. To get access to a user's friend list " +
         "we implemented a facebook log in button so that users could give permissions to the facebook graph api to read their data. Unfortunately " +
         "what this meant was that the graph api could only access the user's friends who have given their own permissions already. There was no " +
-        "work around as this was a self imposed limitation by the Facebook API to control privacy from everyone but larger companies.\n My task in " +
+        "work around as this was a self imposed limitation by the Facebook API to control privacy from everyone but larger companies. My task in " +
         "particular for this project was to implement the api calls, the storing of the call, and to map the data to the elements in during the quiz " +
         "game. I did this using Json Objects and POJOS, where I used the POJOs to store the data after an initial API Call. I did this " +
         "to improve speed of the application, where the API would only need to be called once. To import the image directly into the RecyclerView based off " +
-        "a string url in the POJO I used the Picasso library to draw the image. Last, I also implemented the settings/preferences fragment to control" +
+        "a string url in the POJO I used the Picasso library to draw the image. Last, I also implemented the settings/preferences fragment to control " +
         "settings for the quizzes using SharedPreferences.",
-        pictures:["http://students.washington.edu/kpham97/relive/1.png",
-            "http://students.washington.edu/kpham97/relive/2.png",
-            "http://students.washington.edu/kpham97/relive/3.png",
-            "http://students.washington.edu/kpham97/relive/4.png",
-            "http://students.washington.edu/kpham97/relive/5.png",
-            "http://students.washington.edu/kpham97/relive/6.png",
-            "http://students.washington.edu/kpham97/relive/7.png"],
+        sections:[
+            {sectionname:"Screens", sectiondescr:"",
+            pictures:["http://students.washington.edu/kpham97/relive/1.png",
+                "http://students.washington.edu/kpham97/relive/2.png",
+                "http://students.washington.edu/kpham97/relive/3.png",
+                "http://students.washington.edu/kpham97/relive/4.png",
+                "http://students.washington.edu/kpham97/relive/5.png",
+                "http://students.washington.edu/kpham97/relive/6.png",
+                "http://students.washington.edu/kpham97/relive/7.png"]}
+                ],
         link:"https://github.com/kpham97/Android-Project-ReLive"},
     {url:"huskyquest", name : "Husky Quest", type:"iOS App",
         technology:["Swift", "Alamofire"], img:"http://students.washington.edu/kpham97/iosImage.png",
@@ -52,14 +94,14 @@ let codeProjects = [
         summary:"The result was a choose your own adventure style application. The application was designed using a singleton with multiple views representing various settings"+
         "and statistics. To implement the main function of the app, the story view parsed through a JSON file stored into objects with the the JSON being structured" +
         "much like a typical book. Each choice entry had a page entry that corresponded to the next event located as a specified index in the JSON",
-        pictures:[],
+        sections:[{sectionname:"", sectiondescr:"",pictures:[]}],
         link:"https://github.com/kpham97/HuskyQuest"},
     {url:"clank", name : "Clank Helper App", type:"Android App",
         technology:["Kotlin","Dagger"], img:"http://students.washington.edu/kpham97/androidImage.png",
         brief: "Personal project designed to assist in playing the Clank! boardgame. Purpose to serve two functions, to help keep track of resources"+
         "as well as replace the need for constant shuffling of cards ensuring more equal randomness and helps with game flow",
         summary:"Currently utilizing Kotlin and Dagger to become familiar with these technologies.",
-        pictures:[],
+        sections:[{sectionname:"",sectiondescr:"",pictures:[]}],
         link:""},
 ];
 
@@ -76,8 +118,8 @@ let websiteProjects = [
         "is a comparative direct graph we used to graph the change in AQ between two cities and a graph to show their averages next to each " +
         "other. My task specfically in this group was to work on the backend server-side services of the web app. Data gathering, data storage, " +
         "mapping, etc.",
-        pictures:["http://students.washington.edu/kpham97/airquality/1.png",
-            "http://students.washington.edu/kpham97/airquality/2.png"],
+        sections:[{sectionname:"Screens", sectiondescr:"",pictures:["http://students.washington.edu/kpham97/airquality/1.png",
+            "http://students.washington.edu/kpham97/airquality/2.png"]}],
         link:"https://isenen.shinyapps.io/AirQualityProject/"},
     {url:"nextstep", name : "Next Step", type:"Prototype",
         technology:["AxureRP", "Photoshop CS6"], img:"http://students.washington.edu/kpham97/nextstep/1.png",
@@ -93,7 +135,7 @@ let websiteProjects = [
         "they are then given an option to bookmark careers for later viewing. Also shown is a list of resources that a user can visit to acquire to " +
         "skills or lessons. My specific task for this project was the overall design, structure, and flow of the website. In terms of smaller " +
         "picture, I designed the quiz and results page for the prototype.",
-        pictures:["http://students.washington.edu/kpham97/nextstep/1.png",
+        sections:[{sectionname:"Screens",sectiondescr:"",pictures:["http://students.washington.edu/kpham97/nextstep/1.png",
             "http://students.washington.edu/kpham97/nextstep/2.png",
             "http://students.washington.edu/kpham97/nextstep/3.png",
             "http://students.washington.edu/kpham97/nextstep/4.png",
@@ -106,7 +148,7 @@ let websiteProjects = [
             "http://students.washington.edu/kpham97/nextstep/11.png",
             "http://students.washington.edu/kpham97/nextstep/12.png",
             "http://students.washington.edu/kpham97/nextstep/13.png",
-            "http://students.washington.edu/kpham97/nextstep/14.png",],
+            "http://students.washington.edu/kpham97/nextstep/14.png",]}],
         link:"http://fmbbsg.axshare.com"},
 ];
 
@@ -115,7 +157,7 @@ let designProjects = [
         technology:["Adobe Illustrator"], img:"http://students.washington.edu/kpham97/InfographDesign.png",
         brief: "",
         summary:"",
-        pictures:["http://students.washington.edu/kpham97/FinalInfograph.png"],
+        sections:[{sectionname:"Screens", sectiondescr:"",pictures:["http://students.washington.edu/kpham97/FinalInfograph.png"]}],
         link:"http://kpham97.wixsite.com/362portfolio2017"},
 
 ];

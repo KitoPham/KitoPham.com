@@ -7,7 +7,8 @@ import logo from './resources/KPLogo2.png';
 import testVideo from './resources/videoTemp.mp4';
 import projectVideo from './resources/codingVideo.mp4';
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
-import {Coding, Project}from './Components/Projects';
+import {ProjectGallery} from './Components/ProjectGallery';
+import {Project} from "./Components/Project";
 
 import {codeProjects, websiteProjects, designProjects} from "./Components/ProjectListings";
 import {About} from "./Components/About";
@@ -55,10 +56,10 @@ class Home extends Component{
         }
     }
     sizeClasses = [
-        ["Coding","Design","Photography"],
-        ["bigCoding", "shortDesign", "skinnyPhotography" ],
-        ["shortCode", "bigDesign", "skinnyPhotography"],
-        ["skinnyCode", "skinnyDesign", "bigPhotography"]
+        ["Coding","About","Photography"],
+        ["bigCoding", "shortAbout", "skinnyPhotography" ],
+        ["shortCode", "bigAbout", "skinnyPhotography"],
+        ["skinnyCode", "skinnyAbout", "bigPhotography"]
     ]
 
     Box = [3];
@@ -95,7 +96,7 @@ class Home extends Component{
                             <source src={testVideo} type="video/ogg" />
                         </video>
                         <div className="videoOverlay"></div>
-                        <div className="homeButtonText" id="designText">About</div>
+                        <div className="homeButtonText" id="aboutText">About</div>
                     </Link>
 
                     <Link id={this.sizeClasses[this.state.size][2]} className="homeButton"
@@ -140,20 +141,10 @@ class Mainfooter extends Component {
         )
     }
 }
-class Design extends Component {
-  render() {
-    return (
-      <div>
-        <h1> Design </h1>
-        <p> under construction </p>
-      </div>
-    )
-  }
-}
 
-var MainPages = [
+let MainPages = [
     {Component : <Home />, name : "Home"},
-    {Component : <Coding />, name: "Projects"},
+    {Component : <ProjectGallery />, name: "Projects"},
     {Component : <Photography />, name : "Photography"},
     {Component : <About />, name: "About"}
 ];
@@ -176,7 +167,7 @@ class App extends Component {
     changePage(index) {
         this.setState({
             currentPage: index,
-        })
+        });
         console.log("current updated page index is" + this.state.currentPage);
         console.log("index is " + index);
     }
@@ -189,14 +180,15 @@ class App extends Component {
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component = {()=>{return <Home />}}/>
                         <Route exact path={process.env.PUBLIC_URL + '/Home'} component = {()=>{return <Home />}}/>
-                        <Route exact path={process.env.PUBLIC_URL + '/Projects'} component = {()=>{return <Coding />}}/>
+                        <Route exact path={process.env.PUBLIC_URL + '/Projects'} component = {()=>{return <ProjectGallery />}}/>
                         <Route exact path={process.env.PUBLIC_URL + '/Photography'} component = {()=>{return <Photography />}}/>
                         <Route exact path={process.env.PUBLIC_URL + '/About'} component = {()=>{return <About />}}/>
 
-                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/bitcoin'} component = {()=>{return <Project object = {codeProjects[0]}/>}} />
-                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/relive'} component = {()=>{return <Project object = {codeProjects[1]}/>}} />
-                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/huskyquest'} component = {()=>{return <Project object = {codeProjects[2]}/>}} />
-                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/clank'} component = {()=>{return <Project object = {codeProjects[3]}/>}} />
+                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/There'} component = {()=>{return <Project object = {codeProjects[0]}/>}} />
+                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/bitcoin'} component = {()=>{return <Project object = {codeProjects[1]}/>}} />
+                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/relive'} component = {()=>{return <Project object = {codeProjects[2]}/>}} />
+                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/huskyquest'} component = {()=>{return <Project object = {codeProjects[3]}/>}} />
+                        <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/clank'} component = {()=>{return <Project object = {codeProjects[4]}/>}} />
 
                         <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/airquality'} component = {()=>{return <Project object = {websiteProjects[0]}/>}} />
                         <Route exact path={process.env.PUBLIC_URL + '/Projects/dev/nextstep'} component = {()=>{return <Project object = {websiteProjects[1]}/>}} />

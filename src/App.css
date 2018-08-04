@@ -112,7 +112,8 @@ video {
   color: white;
   float: left;
   position: absolute;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 5px; }
 
 .homeButton_Container {
   position: relative;
@@ -128,7 +129,7 @@ video {
 .homeButton_Container {
   background-color: whitesmoke; }
 
-#Photography, #Coding, #Design {
+#Photography, #Coding, #About {
   float: left;
   position: absolute;
   overflow: hidden; }
@@ -148,35 +149,35 @@ video {
   width: 49.6%;
   background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("resources/codeImage.jpg") no-repeat; }
 
-#Design, #skinnyDesign, #shortDesign, #bigDesign {
+#About, #skinnyAbout, #shortAbout, #bigAbout {
   bottom: 0;
   left: 0;
   height: 49.25%;
   width: 49.6%;
   background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("resources/aboutCover.jpg") no-repeat, left center; }
 
-#bigPhotography, #bigDesign, #bigCoding {
+#bigPhotography, #bigAbout, #bigCoding {
   /*background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/computer.jpg") no-repeat;*/
   background-size: cover;
   z-index: 1; }
 
 /*Modify widths of sections*/
-#shortDesign, #shortCode, #bigDesign, #bigCoding, #bigPhotography {
+#shortAbout, #shortCode, #bigAbout, #bigCoding, #bigPhotography {
   width: 74.5%; }
 
-#skinnyDesign, #skinnyCode, #skinnyPhotography {
+#skinnyAbout, #skinnyCode, #skinnyPhotography {
   width: 24.5%; }
 
 /*Modify Heights */
-#shortDesign, #shortCode {
+#shortAbout, #shortCode {
   height: 14.25%; }
 
-#bigDesign, #bigCoding {
+#bigAbout, #bigCoding {
   z-index: 1;
   height: 84.25%; }
 
 /*Transition Speeds*/
-#Design, #skinnyDesign, #shortDesign, #bigDesign, #Coding, #skinnyCode, #shortCode,
+#About, #skinnyAbout, #shortAbout, #bigAbout, #Coding, #skinnyCode, #shortCode,
 #bigCoding, #Photography, #skinnyPhotography, #shortPhotographyTop, #bigPhotography {
   transition: ease-out 1s; }
 
@@ -192,7 +193,7 @@ video {
 #photoText {
   right: 10px; }
 
-#codingText, #designText {
+#codingText, #aboutText {
   left: 10px; }
 
 @media (max-width: 600px) {
@@ -208,7 +209,7 @@ video {
     text-align: center;
     top: 0px;
     bottom: 0px; }
-  #codingText, #designText {
+  #codingText, #aboutText {
     left: 0px; }
   video {
     visibility: hidden; } }
@@ -224,7 +225,8 @@ body {
   min-height: 300px;
   height: 100%;
   width: 100%;
-  position: relative; }
+  position: relative;
+  font-size: 100%; }
 
 /*Footer */
 .footer {
@@ -318,7 +320,7 @@ body {
     max-width: 100%;
     margin: 0 0 15px 0; } }
 
-.pageImage, .technology, h1, h4, .brief, .pageLink {
+.pageImage, .technology, h1, h4, .brief, .pageLink, .sectionsContainer {
   margin-left: 15%; }
 
 .pageImage {
@@ -337,7 +339,7 @@ body {
   text-decoration: none; }
 
 .backbutton img {
-  max-width: 1%;
+  max-width: 30px;
   padding: 20px;
   margin-top: 40px; }
 
@@ -353,26 +355,28 @@ h1 {
   clear: left;
   float: left; }
 
+.brief, .summary {
+  line-height: 1.65;
+  width: 500px;
+  float: left; }
+
 .brief {
   clear: left;
-  width: 30%;
-  float: left;
-  line-height: 30px;
   margin-bottom: 100px; }
 
 .summary {
-  margin: 0 20px 100px 20px;
-  width: 30%;
+  margin: 0 20px 100px 20px; }
+
+.sectionsContainer {
   float: left;
-  line-height: 30px; }
+  display: flex; }
 
 .pageGallery {
   clear: left;
   width: 90%;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: flex-start; }
 
 .pageGalleryImage {
   height: auto;
@@ -393,4 +397,22 @@ h1 {
 
 .aboutText {
   max-width: 70%;
-  line-height: 30px; }
+  line-height: 1.65; }
+
+@media only screen and (max-width: 400px) {
+  body {
+    font-size: 90%; } }
+
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: 100%; }
+  .summary, .brief {
+    width: 300px; } }
+
+@media only screen and (max-width: 1100px) {
+  body {
+    font-size: 120%; }
+  .summary, .brief {
+    width: 350px; }
+  .pageImage, .technology, h1, h4, .brief, .pageLink, .sectionsContainer {
+    margin-left: 20px; } }

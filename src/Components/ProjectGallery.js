@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import backicon from '../resources/backicon.png';
 import comingSoonImage from '../resources/comingsoon.png';
 import {Link} from 'react-router-dom'
 import {codeProjects,designProjects,websiteProjects} from "./ProjectListings";
 
-class Coding extends Component {
+class ProjectGallery extends Component {
     render(){
 
         function intersperse(arr, sep) {
@@ -72,11 +71,10 @@ class Coding extends Component {
                         {designProjects.map((page, index) => (
                             <li key = {index}>
                                 <Link
-                                    className="headerButton"
                                     //onClick ={()=>{this.props.changePage(index)}}
-                                    to={process.env.PUBLIC_URL + '/projects/design/'+ page.url}
+                                    to={process.env.PUBLIC_URL + '/Projects/design/'+ page.url}
                                     style={{ textDecoration: 'none', color: 'black'}}>
-                                    <img className="projectImage" src={page.img} alt={page.img}/>
+                                    <div className="projectImageWrap"><img className="projectImage" src={page.img} alt={page.img}/></div>
                                 </Link>
                                 <div className="projectText">
                                     <strong>{page.name}</strong><br />
@@ -91,38 +89,5 @@ class Coding extends Component {
     }
 }
 
-class Project extends Component{
-    render() {
-        return (
-            <div className="Content_Container">
-                <div className="page_Container">
-                    <Link to="/projects" className="backbutton"><img src={backicon} alt="back"/></Link>
-                    <h1>{this.props.object.name}</h1>
-                    <h4>{this.props.object.type}</h4>
-                    <div className="technology">
-                        <h3>Technologies</h3>
-                        <ul>
-                            {this.props.object.technology.map((word, index) => (
-                                <li key={index}>
-                                    {word}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <img className="pageImage" src={this.props.object.img} alt='projectImage'/>
-                    <a className="pageLink" href={this.props.object.link}> See More </a>
-                    <div className="brief"><h2>Brief</h2>{this.props.object.brief}</div>
-                    <div className="summary"><h2>Summary</h2>{this.props.object.summary}</div>
 
-                    <div className="pageGallery">{this.props.object.pictures.map((picture, index) => (
-                        <a href={picture} key={index}>
-                            <img className="pageGalleryImage" src={picture} alt={picture}/>
-                        </a>))}
-                    </div>
-                </div>
-            </div>
-        )
-    }
-}
-
-export {Coding, Project};
+export {ProjectGallery};
