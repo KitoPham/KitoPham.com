@@ -4,12 +4,12 @@ I'm continually updating this code as I pick up new things about various things 
 design patterns, or just general features that I want to add!
 
 To do list:
--~~ Responsive home page~~
--Better scaling on homepage images for smaller sizes
+- ~~Responsive home page~~
+- Better scaling on homepage images for smaller sizes
 
--~~ Flexible project page with sections ~~
--Firebase / input forms for updating project posts
--Direct email
--Dynamic floating action button with a circle menu
--Responsive About page
--Photography Gallery Page
+- ~~Flexible project page with sections~~
+- Firebase / input forms for updating project posts
+- Direct email
+- Dynamic floating action button with a circle menu
+- Responsive About page
+- Photography Gallery Page
