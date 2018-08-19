@@ -1,75 +1,5 @@
-/*Header css*/
-.header-logo {
-  /* animation: App-logo-spin infinite 20s linear;*/
-  height: 60px;
-  width: auto;
-  margin-right: 20px;
-  margin-left: 20px; }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg); }
-  to {
-    transform: rotate(360deg); } }
-
-.header {
-  /*z-index: 2;
-    position:fixed;
-    top:0;*/
-  color: black;
-  text-align: left;
-  width: 100%;
-  font-size: large;
-  line-height: 50px;
-  box-shadow: 0px 10px 70px rgba(0, 0, 0, 0.075);
-  display: flex; }
-
-.header * {
-  display: inline-flex;
-  align-self: center; }
-
-.header div {
-  flex-wrap: wrap; }
-
-.header h2 {
-  display: inline-flex;
-  margin-right: 30px; }
-
-.headerButton_Container {
-  overflow: hidden;
-  display: inline-flex;
-  flex-wrap: wrap; }
-
-.headerButton_Container * {
-  margin-right: 20px; }
-
-@media (max-width: 600px) {
-  .header-logo {
-    height: 100px; }
-  .header {
-    margin: auto;
-    width: 100%;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.125); }
-  .headerButton_Container {
-    width: 70%; }
-  .headerButton_Container * {
-    display: block; }
-  .headerButton {
-    width: 100%; } }
-
-.App-intro {
-  font-size: large; }
-
-.headerButton, .homeButton {
-  cursor: pointer; }
-
-.headerButton {
-  text-decoration: none;
-  color: darkgray; }
-
-.activeHeaderButton, .headerButton:hover {
-  color: black;
-  text-decoration: underline; }
+* {
+  box-sizing: border-box; }
 
 /*Home Page*/
 @keyframes fadein {
@@ -82,7 +12,7 @@
   margin-top: 5px;
   margin-bottom: 30px;
   /*padding-bottom: 150px;*/
-  animation: 1s linear 0s 1 fadein;
+  /*animation: 1s linear 0s 1 fadein;*/
   clear: left; }
 
 video {
@@ -104,7 +34,7 @@ video {
 .videoOverlay:hover {
   /*background-color: rgba(40,150,256,.2);*/
   /*background-color: rgba(124,124,124,.3);*/
-  /*background-color: rgba(50,100,256,.2) use this one*/ }
+  background-color: rgba(50, 100, 255, 0.2); }
 
 .homeButton {
   display: inline-block;
@@ -113,11 +43,12 @@ video {
   float: left;
   position: absolute;
   overflow: hidden;
-  border-radius: 5px; }
+  border-radius: 5px;
+  background-position: center; }
 
 .homeButton_Container {
   position: relative;
-  height: 760px;
+  height: 70vh;
   width: 1570px;
   max-width: 95%;
   margin: auto;
@@ -127,76 +58,111 @@ video {
   /*box-shadow: 20px 20px 20px rgba(120,120,120,.3);*/ }
 
 .homeButton_Container {
-  background-color: whitesmoke; }
+  /*background-color: white;*/ }
 
-#Photography, #Coding, #About {
-  float: left;
-  position: absolute;
-  overflow: hidden; }
+#Coding, #Photography, #About, #shortCode, #bigAbout, #bigCoding, #skinnyPhotography, #skinnyCode, #skinnyAbout, #bigPhotography, #shortAbout {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 25%;
+  margin-bottom: 2%; }
 
-/*Defaults */
 #Photography, #bigPhotography, #skinnyPhotography {
-  height: 100%;
-  width: 49.6%;
-  top: 0;
-  right: 0;
-  background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("resources/cameraCover.jpg") no-repeat; }
+  background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("../resources/backgrounds/cameraCover.jpg") no-repeat;
+  background-position: center; }
 
 #Coding, #skinnyCode, #shortCode, #bigCoding {
-  top: 0;
-  left: 0;
-  height: 49.25%;
-  width: 49.6%;
-  background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("resources/codeImage.jpg") no-repeat; }
+  background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("../resources/backgrounds/codeImage.jpg") no-repeat; }
 
 #About, #skinnyAbout, #shortAbout, #bigAbout {
-  bottom: 0;
-  left: 0;
-  height: 49.25%;
-  width: 49.6%;
-  background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("resources/aboutCover.jpg") no-repeat, left center; }
-
-#bigPhotography, #bigAbout, #bigCoding {
-  /*background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/computer.jpg") no-repeat;*/
-  background-size: cover;
-  z-index: 1; }
-
-/*Modify widths of sections*/
-#shortAbout, #shortCode, #bigAbout, #bigCoding, #bigPhotography {
-  width: 74.5%; }
-
-#skinnyAbout, #skinnyCode, #skinnyPhotography {
-  width: 24.5%; }
-
-/*Modify Heights */
-#shortAbout, #shortCode {
-  height: 14.25%; }
-
-#bigAbout, #bigCoding {
-  z-index: 1;
-  height: 84.25%; }
-
-/*Transition Speeds*/
-#About, #skinnyAbout, #shortAbout, #bigAbout, #Coding, #skinnyCode, #shortCode,
-#bigCoding, #Photography, #skinnyPhotography, #shortPhotographyTop, #bigPhotography {
-  transition: ease-out 1s; }
+  background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("../resources/backgrounds/aboutCover.jpg") no-repeat; }
 
 .homeButtonText {
   position: absolute;
   bottom: 10px;
-  padding: 10px 20px 10px 20px;
-  background-color: rgba(125, 125, 125, 0.5);
-  word-wrap: break-word;
-  max-width: 85%;
-  font-size: 1em; }
+  padding: 0;
+  font-size: .75em;
+  margin-bottom: 0; }
 
-#photoText {
+#aboutText {
   right: 10px; }
 
-#codingText, #aboutText {
+#codingText, #photoText {
   left: 10px; }
 
-@media (max-width: 600px) {
+@media (min-width: 800px) {
+  .homeButton_Container {
+    position: relative;
+    height: 80vh;
+    width: 1570px;
+    max-width: 95%;
+    margin: auto;
+    margin-top: 1.5vw;
+    /*margin: 1.5vw 2.5vw 2.5vw 2.5vw;*/
+    font-size: 48px;
+    /*box-shadow: 20px 20px 20px rgba(120,120,120,.3);*/ }
+  #Coding, #Photography, #About, #shortCode, #bigAbout, #bigCoding, #skinnyPhotography, #skinnyCode, #skinnyAbout, #bigPhotography, #shortAbout {
+    position: absolute;
+    overflow: hidden;
+    margin-bottom: 0; }
+  #Photography, #Coding, #About {
+    float: left;
+    position: absolute;
+    overflow: hidden; }
+  /*Defaults */
+  #Photography, #bigPhotography, #skinnyPhotography {
+    height: 100%;
+    width: 49.6%;
+    top: 0;
+    right: 0;
+    background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("../resources/backgrounds/cameraCover.jpg") no-repeat;
+    background-position: center; }
+  #Coding, #skinnyCode, #shortCode, #bigCoding {
+    top: 0;
+    left: 0;
+    height: 49.25%;
+    width: 49.6%;
+    background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("../resources/backgrounds/codeImage.jpg") no-repeat; }
+  #About, #skinnyAbout, #shortAbout, #bigAbout {
+    bottom: 0;
+    left: 0;
+    height: 49.25%;
+    width: 49.6%;
+    background: linear-gradient(0deg, rgba(50, 100, 255, 0.3), rgba(50, 100, 255, 0.1)), url("../resources/backgrounds/aboutCover.jpg") no-repeat; }
+  #bigPhotography, #bigAbout, #bigCoding {
+    /*background: linear-gradient(0deg,rgba(50,100,256,0.3),rgba(50,100,256,0.1)), url("resources/computer.jpg") no-repeat;*/
+    z-index: 1; }
+  /*Modify widths of sections*/
+  #shortAbout, #shortCode, #bigAbout, #bigCoding, #bigPhotography {
+    width: 74.5%; }
+  #skinnyAbout, #skinnyCode, #skinnyPhotography {
+    width: 24.5%; }
+  /*Modify Heights */
+  #shortAbout, #shortCode {
+    height: 14.25%; }
+  #bigAbout, #bigCoding {
+    z-index: 1;
+    height: 84.25%; }
+  /*Transition Speeds*/
+  #About, #skinnyAbout, #shortAbout, #bigAbout, #Coding, #skinnyCode, #shortCode,
+  #bigCoding, #Photography, #skinnyPhotography, #shortPhotographyTop, #bigPhotography {
+    transition: linear .5s; }
+  .homeButtonText {
+    position: absolute;
+    bottom: 10px;
+    padding: 10px 20px 10px 20px;
+    background-color: rgba(125, 125, 125, 0.5);
+    overflow: hidden;
+    max-width: 85%;
+    font-size: 1em; }
+  #photoText {
+    right: 10px;
+    left: auto; }
+  #codingText, #aboutText {
+    left: 10px;
+    right: auto; } }
+
+@media (min-width: 20000px) {
   #photoText {
     right: 0px; }
   .homeButtonText {
@@ -214,9 +180,14 @@ video {
   video {
     visibility: hidden; } }
 
+@keyframes slide {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: -400px 0; } }
+
 body {
-  font-family: Avenir,"Lucida Sans", sans-serif;
-  background-color: white;
+  font-family: "Roboto Mono" ,"Lucida Sans", sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -226,7 +197,8 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  font-size: 100%; }
+  font-size: 100%;
+  background-image: url("../resources/qbkls.png"); }
 
 /*Footer */
 .footer {
@@ -295,7 +267,8 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
-  box-shadow: 5px 10px 40px lightgray; }
+  box-shadow: 0px 5px 20px lightgray;
+  background: white; }
 
 .projectImage {
   max-height: 188px;
@@ -308,6 +281,9 @@ body {
   max-height: 250px;
   max-width: 330px;
   transition: ease-out .5s; }
+
+.projectText {
+  margin-left: 10%; }
 
 @media (max-width: 780px) {
   .projects {
@@ -325,9 +301,10 @@ body {
 
 .pageImage {
   padding: 20px;
-  /*box-shadow: 20px 20px 50px rgba(120,120,120,.5);*/
+  box-shadow: 20px 20px 50px rgba(120, 120, 120, 0.5);
   float: left;
-  max-width: 350px; }
+  max-width: 350px;
+  background: white; }
 
 .technology {
   float: left;
@@ -340,8 +317,7 @@ body {
 
 .backbutton img {
   max-width: 30px;
-  padding: 20px;
-  margin-top: 40px; }
+  margin: 40px 20px 20px 20px; }
 
 .backbutton img:hover, .pageGalleryImage:hover {
   background-color: rgba(50, 100, 255, 0.4); }
@@ -353,7 +329,8 @@ h1 {
 
 .pageLink {
   clear: left;
-  float: left; }
+  float: left;
+  padding: 16px; }
 
 .brief, .summary {
   line-height: 1.65;
@@ -399,16 +376,6 @@ h1 {
   max-width: 70%;
   line-height: 1.65; }
 
-@media only screen and (max-width: 400px) {
-  body {
-    font-size: 90%; } }
-
-@media only screen and (max-width: 800px) {
-  body {
-    font-size: 100%; }
-  .summary, .brief {
-    width: 300px; } }
-
 @media only screen and (max-width: 1100px) {
   body {
     font-size: 120%; }
@@ -416,3 +383,15 @@ h1 {
     width: 350px; }
   .pageImage, .technology, h1, h4, .brief, .pageLink, .sectionsContainer {
     margin-left: 20px; } }
+
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: 100%; }
+  .summary, .brief {
+    width: 300px; } }
+
+@media only screen and (max-width: 400px) {
+  body {
+    font-size: 90%; }
+  .pageImage {
+    max-width: 80%; } }

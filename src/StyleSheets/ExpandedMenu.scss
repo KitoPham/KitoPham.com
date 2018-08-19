@@ -1,0 +1,26 @@
+.expandedMenu{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: #414042;
+  z-index: 2;
+  opacity: 0.95;
+  animation: slide_in_from_left 1s forwards;
+}
+
+.expanded_menu_item{
+  color : white;
+  font-size: 2em;
+  text-decoration: none;
+  margin: 20px;
+}
+
+@keyframes slide_in_from_left {
+  0%{
+    left: -200px;
+}100%{
+    left:0px;
+   }
+
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import comingSoonImage from '../resources/comingsoon.png';
 import {Link} from 'react-router-dom'
-import {codeProjects,designProjects,websiteProjects} from "./ProjectListings";
+import {codeProjects,designProjects,websiteProjects} from "../Constants/ProjectListings";
 
 class ProjectGallery extends Component {
     render(){
@@ -54,25 +54,6 @@ class ProjectGallery extends Component {
                                 <Link
                                     //onClick ={()=>{this.props.changePage(index)}}
                                     to={process.env.PUBLIC_URL + '/Projects/dev/'+ page.url}
-                                    style={{ textDecoration: 'none', color: 'black'}}>
-                                    <div className="projectImageWrap"><img className="projectImage" src={page.img} alt={page.img}/></div>
-                                </Link>
-                                <div className="projectText">
-                                    <strong>{page.name}</strong><br />
-                                    {page.type} : {intersperse(page.technology, ", ")}
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div id="design_projects">
-                    <h1>Design</h1>
-                    <ul className="projects">
-                        {designProjects.map((page, index) => (
-                            <li key = {index}>
-                                <Link
-                                    //onClick ={()=>{this.props.changePage(index)}}
-                                    to={process.env.PUBLIC_URL + '/Projects/design/'+ page.url}
                                     style={{ textDecoration: 'none', color: 'black'}}>
                                     <div className="projectImageWrap"><img className="projectImage" src={page.img} alt={page.img}/></div>
                                 </Link>

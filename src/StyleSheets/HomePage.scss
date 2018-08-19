@@ -1,0 +1,239 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } to {
+      transform: rotate(360deg);
+    }
+}
+
+@keyframes blink {
+  from{
+    opacity: .5;
+  } to {
+  opacity: 1;
+      }
+
+}
+.Logo_Container{
+  animation: blink 1s infinite linear;
+}
+
+.logoCircleRotating{
+  animation: spin 4000ms infinite linear;
+  background: rgba(255,255,255,.5);
+  border-radius: 50%;
+}
+
+.logoCircle:hover{
+  animation: spin 4s infinite linear;
+}
+
+@keyframes scaleClick{
+  0%{
+    transform: scale(1);
+  } 50% {
+      transform: scale(1.1);
+    }100%{
+       transform: scale(1);
+     }
+}
+
+.logo_container_clicked{
+  animation: scaleClick .5s;
+}
+
+.Logo_Container, .menu_item{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+
+.menu_item{
+  height: 30vw;
+  width: 30vw;
+}
+
+.itemTextHidden, .itemText {
+  opacity:0;
+  font-size: 0;
+  width: 0;
+}
+
+.Logo_Container, .devIcon, .cameraIcon, .aboutIcon {
+  height: 30vw;
+  width: 30vw;
+  border-radius: 50%;
+  box-shadow: #414042 0px 1px 10px;
+  background: white;
+}
+
+.icon_dev{
+  transform:translate(30vw, -35vw);
+}
+
+.icon_about{
+  transform:translate(30vw, 35vw);
+}
+
+.icon_camera {
+  transform: translate(50vw);
+}
+
+.home_section{
+  font-size: 0;
+  width:0;
+}
+@media (min-width: 450px) {
+  .Logo_Container, .devIcon, .cameraIcon, .aboutIcon {
+
+  }
+
+  .Logo_Container, .menu_item{
+    top: 45%;
+    left: 10%;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+  }
+  .menu_item{
+    height:100px;
+    width: 100px;
+    background: rgba(65,64,66,1);;;
+    border-radius: 50px;
+  }
+
+
+  .devIcon, .cameraIcon, .aboutIcon {
+    height: 100px;
+    width: 100px;
+  }
+
+  .icon_dev {
+    transform: translate(75px, -250px);
+  }
+
+  .icon_about {
+    transform: translate(275px, 75px);
+  }
+
+  .icon_camera {
+    transform: translate(225px, -100px);
+  }
+}
+@media (min-width: 800px) {
+  .home_section {
+    width: 0;
+    height: 100%;
+    float: right;
+    background-position: center;
+    background-size: cover;
+    border-radius: 5%;
+    transition: width .5s ease-in-out;
+    opacity: .75;
+    font-size: 0;
+  }
+
+  .introduction{
+    width: 50%;
+    font-size: 30px;
+    color: #222222;
+    padding: 32px;
+  }
+
+  .intro_block{
+
+  }
+
+  .white_background {
+    background: whitesmoke;
+    opacity:1;
+    transition: width 1s linear;
+  }
+
+  .background_dev {
+    background-image: url("../resources/backgrounds/codeImage.jpg");
+    width:50%
+
+  }
+
+  .background_about {
+    background-image: url("../resources/backgrounds/aboutCover.jpg");
+    width:50%
+  }
+
+  .background_camera {
+    background-image: url("../resources/backgrounds/cameraCover.jpg");
+    width:50%
+  }
+
+  .itemText {
+    transition: opacity 3s 1s ease-out;
+    margin-left: 125px;
+    padding-top: 32px;
+    font-size: 20pt;
+    font-weight: 300;
+    opacity: 1;
+  }
+
+  .icon_dev {
+    width:275px;
+  }
+
+  .icon_about {
+    width:250px;
+  }
+
+  .icon_camera {
+    width:325px;
+  }
+}
+
+
+
+.logoK, .logoCircle, .devIcon, .aboutIcon, .cameraIcon {
+  position: absolute;
+  top:0;
+  bottom:0;
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+}
+@keyframes bobbingAnimation {
+  0%{
+transform: scale(1);
+} 50%{
+  transform: scale(1.05);
+} 100%{
+  transform: scale(1);
+      }
+
+}
+.icon_about, .icon_dev, .icon_camera{
+  transition:
+          opacity 1s,
+          transform 1s,
+          width 1s 0.5s,
+          border 0.5s 1s;
+
+  //border: 7px solid black;
+}
+
+.devIcon, .aboutIcon, .cameraIcon{
+  border-radius: 50%;
+  &:hover{
+    animation: bobbingAnimation .5s ease-out;
+  }
+}
+.icon_hidden {
+  opacity: 0;
+  transition: 1s;
+}
+
+.homeButton_Container{
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+
