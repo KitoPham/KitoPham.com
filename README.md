@@ -5,7 +5,7 @@ design patterns, or just general features that I want to add!
 
 To do list:
 - ~~Responsive home page~~
-- Better scaling on homepage images for smaller sizes
+- ~~Better scaling on homepage images for smaller sizes~~
 
 - ~~Flexible project page with sections~~
 - Firebase / input forms for updating project posts
