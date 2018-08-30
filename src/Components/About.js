@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import aboutPhoto from '../resources/aboutPhoto.jpg';
+import aboutPhoto from '../resources/Photos/aboutPhoto.jpg';
 let resumeLink = 'https://drive.google.com/file/d/1c8ubHYkXqGDOepF3xdF1WiKrFRx7Z9ab/view?usp=sharing';
 
 class About extends Component{

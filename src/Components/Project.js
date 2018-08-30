@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import backicon from '../resources/backicon.png';
+import backicon from '../resources/icons/backicon.png';
 import {Link} from 'react-router-dom'
 
 class Project extends Component{

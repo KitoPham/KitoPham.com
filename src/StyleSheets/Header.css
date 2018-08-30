@@ -1,0 +1,74 @@
+/*Header css*/
+.header-logo {
+  height: 60px;
+  width: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+  visibility: hidden; }
+
+.header {
+  /*z-index: 2;
+  position:fixed;
+  top:0;*/
+  color: white;
+  text-align: left;
+  width: 100%;
+  font-size: large;
+  line-height: 50px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  background: #414042; }
+
+.header * {
+  display: inline-flex;
+  align-self: center; }
+
+.header div {
+  flex-wrap: wrap; }
+
+.header h2 {
+  display: inline-flex;
+  margin-right: 30px;
+  margin-left: 30px; }
+
+.headerButton_Container {
+  overflow: hidden;
+  float: right;
+  display: inline-flex;
+  flex-wrap: wrap; }
+
+.headerButton_Container * {
+  margin-right: 20px; }
+
+@media (max-width: 600px) {
+  .header-logo {
+    height: 100px; }
+  .header {
+    margin: auto;
+    width: 100%;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.125);
+    justify-content: flex-start; }
+  .headerButton_Container {
+    width: 70%; }
+  .headerButton_Container * {
+    display: block; }
+  .headerButton {
+    width: 100%; } }
+
+.App-intro {
+  font-size: large; }
+
+.headerButton, .homeButton {
+  cursor: pointer; }
+
+.headerButton {
+  text-decoration: none;
+  color: white; }
+
+.activeHeaderButton, .headerButton:hover {
+  color: black; }
+
+.menu {
+  height: 40px;
+  margin-right: 30px;
+  margin-left: 30px; }

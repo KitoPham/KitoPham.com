@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.defe3737.css",
-  "main.css.map": "static/css/main.defe3737.css.map",
-  "main.js": "static/js/main.05eb28b4.js",
-  "main.js.map": "static/js/main.05eb28b4.js.map",
+  "main.css": "static/css/main.b8955de2.css",
+  "main.css.map": "static/css/main.b8955de2.css.map",
+  "main.js": "static/js/main.12935083.js",
+  "main.js.map": "static/js/main.12935083.js.map",
   "static\\media\\THERE - Black.png": "static/media/THERE - Black.e1bf5e40.png",
   "static\\media\\aboutCover.jpg": "static/media/aboutCover.b8754676.jpg",
   "static\\media\\aboutPhoto.jpg": "static/media/aboutPhoto.7c936cc9.jpg",
@@ -21,6 +21,6 @@
   "static\\media\\icon_BlackK.svg": "static/media/icon_BlackK.a57d23af.svg",
   "static\\media\\qbkls.png": "static/media/qbkls.d808fef0.png",
   "static\\media\\videoTemp.mp4": "static/media/videoTemp.fa89df19.mp4",
-  "static\\media\\whiteCloseIcon.svg": "static/media/whiteCloseIcon.1191d0ca.svg",
-  "static\\media\\whiteMenu.svg": "static/media/whiteMenu.faf42d9f.svg"
+  "static\\media\\whiteCloseIcon.svg": "static/media/whiteCloseIcon.b7724dd5.svg",
+  "static\\media\\whiteMenu.svg": "static/media/whiteMenu.d166452c.svg"
 }

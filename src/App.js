@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './StyleSheets/App.css';
-import linkedinlogo from './resources/linkedin-icon.png';
-import fblogo from './resources/fb-icon.png';
-import githublogo from './resources/github-icon.png';
-import testVideo from './resources/videoTemp.mp4';
-import projectVideo from './resources/codingVideo.mp4';
+import linkedinlogo from './resources/icons/linkedin-icon.png';
+import fblogo from './resources/icons/fb-icon.png';
+import githublogo from './resources/icons/github-icon.png';
+import testVideo from './resources/videos/videoTemp.mp4';
+import projectVideo from './resources/videos/codingVideo.mp4';
 import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
 import {ProjectGallery} from './Components/ProjectGallery';
 import {Project} from "./Components/Project";
