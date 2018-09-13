@@ -6,7 +6,7 @@
   background: #414042;
   z-index: 2;
   opacity: 0.95;
-  animation: slide_in_from_left 1s forwards; }
+  animation: slide_in_from_left 0.5s forwards; }
 
 .expanded_menu_item {
   color: white;

@@ -46,19 +46,19 @@ class Home extends Component{
         };
         return(
             <div className = "Content_Container">
+                <div className="Banner"> Hi, I've recently updated my github name, go to <a href ="https://www.github.com/KitoPham">github.com/KitoPham</a> to see my projects</div>
                 <div className = "homeButton_Container">
 
                     <Link id={this.sizeClasses[this.state.size][0]} className="homeButton"
                         //onClick ={()=>{this.props.changePage(1)}}
                           onMouseOver ={() =>{this.setState({size:1});
-                              this.Box[0].play();}}
+                              //this.Box[0].play();
+                          }}
                           onMouseLeave={()=>{this.setState({size:0});
-                              this.Box[0].pause(); this.Box[0].currentTime=0;}}
+                              //this.Box[0].pause();
+                              //this.Box[0].currentTime=0;
+                          }}
                           to={process.env.PUBLIC_URL + '/Projects'} style={backgroundSize}>
-                        <video ref = {(input) => {this.Box[0] = input}} muted>
-                            <source src={projectVideo} type="video/mp4" />
-                            <source src={projectVideo} type="video/ogg" />
-                        </video>
                         <div className="videoOverlay"></div>
                         <div className="homeButtonText" id="codingText">Projects</div>
                     </Link>
@@ -66,14 +66,12 @@ class Home extends Component{
                     <Link id={this.sizeClasses[this.state.size][1]} className="homeButton"
                         //onClick ={()=>{this.props.changePage(2)}}
                           onMouseOver ={() =>{this.setState({size:2});
-                              this.Box[1].play();}}
+                              //this.Box[1].play();
+                          }}
                           onMouseLeave={()=>{this.setState({size:0});
-                              this.Box[1].pause(); this.Box[1].currentTime=0;}}
+                              //this.Box[1].pause(); this.Box[1].currentTime=0;
+                          }}
                           to={process.env.PUBLIC_URL + '/About'} style={backgroundSize}>
-                        <video ref = {(input) => {this.Box[1] = input}} muted>
-                            <source src={testVideo} type="video/mp4" />
-                            <source src={testVideo} type="video/ogg" />
-                        </video>
                         <div className="videoOverlay"></div>
                         <div className="homeButtonText" id="aboutText">About</div>
                     </Link>
@@ -81,14 +79,12 @@ class Home extends Component{
                     <Link id={this.sizeClasses[this.state.size][2]} className="homeButton"
                         //onClick ={()=>{this.props.changePage(1)}}
                           onMouseOver ={() =>{this.setState({size:3});
-                              this.Box[2].play();}}
+                              //this.Box[2].play();
+                          }}
                           onMouseLeave={()=>{this.setState({size:0});
-                              this.Box[2].pause(); this.Box[2].currentTime=0;}}
+                              //this.Box[2].pause(); this.Box[2].currentTime=0;
+                          }}
                           to={process.env.PUBLIC_URL + '/Photography'} style={{backgroundSize: this.props.width<1150 ? this.props.height  * 1.2 : this.props.width}}>
-                        <video ref = {(input) => {this.Box[2] = input}} muted>
-                            <source src={testVideo} type="video/mp4" />
-                            <source src={testVideo} type="video/ogg" />
-                        </video>
                         <div className="videoOverlay"></div>
                         <div className="homeButtonText" id="photoText">Photography</div>
                     </Link>
@@ -111,7 +107,7 @@ class Mainfooter extends Component {
                     <a href = "https://www.linkedin.com/in/kitopham">
                         <img src={linkedinlogo} className="social-media" alt="linkedin" />
                     </a>
-                    <a href = "https://www.github.com/kpham97">
+                    <a href = "https://www.github.com/kitopham">
                         <img src={githublogo} className="social-media" alt="facebook" style={{borderRadius: '50%'}}/>
                     </a>
                 </div>

@@ -1,5 +1,5 @@
-import cryptoTrack from '../resources/cryptoTracker.png';
-import reLive from '../resources/projects/reLive.png';
+import cryptoTrack from '../resources/projects/cryptoTracker.png';
+import reLive from '../resources/projects/relive.png';
 import thereLogo from '../resources/projects/THERE - Black.png'
 
 let codeProjects = [{url:"There", name: "There", type: "iOS App",

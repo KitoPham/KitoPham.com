@@ -1,6 +1,22 @@
 * {
   box-sizing: border-box; }
 
+@keyframes bannerDisappear {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+.Banner {
+  width: 100%;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: white; }
+
 /*Home Page*/
 @keyframes fadein {
   0% {
