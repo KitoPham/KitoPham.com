@@ -13,8 +13,12 @@ import {codeProjects, websiteProjects, designProjects} from "./Constants/Project
 import {About} from "./Components/About";
 import {Photography} from "./Components/Photography";
 import {HomePage} from "./Components/Home";
-import {MainHeader} from "./Components/MainHeader"
-import {ExpandedMenu} from "./Components/ExpandedMenu"
+import {MainHeader} from "./Components/MainHeader";
+import {ExpandedMenu} from "./Components/ExpandedMenu";
+
+import codingBackground from "./resources/backgrounds/codeImage.jpg";
+import aboutBackground from "./resources/backgrounds/aboutCover.jpg";
+import photographyBackground from "./resources/backgrounds/cameraCover.jpg";
 
 /*
  * JS used to manage the content of the website
@@ -39,40 +43,42 @@ class Home extends Component{
 
 
     render() {
-        var backgroundSize = {
+        var homeStyle = {
             textDecoration: 'none',
-            color: 'white',
-            backgroundSize: this.props.width
+            color: 'white'
         };
+
+        var imageStyle = {
+            width: this.props.width * 0.75
+        }
         return(
             <div className = "Content_Container">
                 <div className="Banner"> Hi, I've recently updated my github name, go to <a href ="https://www.github.com/KitoPham">github.com/KitoPham</a> to see my projects</div>
                 <div className = "homeButton_Container">
 
                     <Link id={this.sizeClasses[this.state.size][0]} className="homeButton"
-                        //onClick ={()=>{this.props.changePage(1)}}
-                          onMouseOver ={() =>{this.setState({size:1});
-                              //this.Box[0].play();
+                          onMouseOver ={() =>{
+                              this.setState({size:1});
                           }}
-                          onMouseLeave={()=>{this.setState({size:0});
-                              //this.Box[0].pause();
-                              //this.Box[0].currentTime=0;
+                          onMouseLeave={()=>{
+                              this.setState({size:0});
                           }}
-                          to={process.env.PUBLIC_URL + '/Projects'} style={backgroundSize}>
-                        <div className="videoOverlay"></div>
+                          to={process.env.PUBLIC_URL + '/Projects'} style={homeStyle}>
+                        <div className="overlay"></div>
+                        <img className="homeImage" src={codingBackground} alt="projects" style = {imageStyle}/>
                         <div className="homeButtonText" id="codingText">Projects</div>
                     </Link>
 
                     <Link id={this.sizeClasses[this.state.size][1]} className="homeButton"
-                        //onClick ={()=>{this.props.changePage(2)}}
-                          onMouseOver ={() =>{this.setState({size:2});
-                              //this.Box[1].play();
+                          onMouseOver ={() =>{
+                              this.setState({size:2});
                           }}
-                          onMouseLeave={()=>{this.setState({size:0});
-                              //this.Box[1].pause(); this.Box[1].currentTime=0;
+                          onMouseLeave={()=>{
+                              this.setState({size:0});
                           }}
-                          to={process.env.PUBLIC_URL + '/About'} style={backgroundSize}>
-                        <div className="videoOverlay"></div>
+                          to={process.env.PUBLIC_URL + '/About'} style={homeStyle}>
+                        <div className="overlay"></div>
+                        <img className="homeImage" src={aboutBackground} alt="about" style = {imageStyle}/>
                         <div className="homeButtonText" id="aboutText">About</div>
                     </Link>
 
@@ -84,8 +90,9 @@ class Home extends Component{
                           onMouseLeave={()=>{this.setState({size:0});
                               //this.Box[2].pause(); this.Box[2].currentTime=0;
                           }}
-                          to={process.env.PUBLIC_URL + '/Photography'} style={{backgroundSize: this.props.width<1150 ? this.props.height  * 1.2 : this.props.width}}>
-                        <div className="videoOverlay"></div>
+                          to={process.env.PUBLIC_URL + '/Photography'}>
+                        <div className="overlay"></div>
+                        <img className="homeImage" src={photographyBackground} alt="projects" style = {imageStyle}/>
                         <div className="homeButtonText" id="photoText">Photography</div>
                     </Link>
 
@@ -168,17 +175,18 @@ class App extends Component {
         if (this.state.menuVisibility){
             expandedMenu = <ExpandedMenu/>
         }
+        let home = <Home width={this.state.width} height={this.state.height}/>
         return (
             <Router>
                 <div>
                     <MainHeader width = {this.state.width} changePage= {this.changePage} toggleMenu ={this.toggleMenu}/>
                     {expandedMenu}
                     <Switch>
-                        <Route exact path={process.env.PUBLIC_URL + '/'} component = {()=>{return <Home width={this.state.width} height={this.state.height}/>}}/>
-                        <Route exact path={process.env.PUBLIC_URL + '/Home'} component = {()=>{return <Home width={this.state.width} height={this.state.height}/>}}/>
+                        <Route exact path={process.env.PUBLIC_URL + '/'} component = {()=>{return home}}/>
+                        <Route exact path={process.env.PUBLIC_URL + '/Home'} component = {()=>{return home}}/>
 
-                        <Route exact path={process.env.PUBLIC_URL + '/HomeV2'} component = {()=>{return <HomePage width={this.state.width} />}}/>
-                        <Route exact path={process.env.PUBLIC_URL + '/HomeV1'} component = {()=>{return <Home width={this.state.width}/>}}/>
+                        <Route exact path={process.env.PUBLIC_URL + '/HomeV2'} component = {()=>{return <HomePage width={this.state.width} height={this.state.height}/>}}/>
+                        <Route exact path={process.env.PUBLIC_URL + '/HomeV1'} component = {()=>{return <Home width={this.state.width} height={this.state.height}/>}}/>
 
                         <Route exact path={process.env.PUBLIC_URL + '/Projects'} component = {()=>{return <ProjectGallery />}}/>
                         <Route exact path={process.env.PUBLIC_URL + '/Photography'} component = {()=>{return <Photography />}}/>

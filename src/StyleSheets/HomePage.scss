@@ -122,7 +122,7 @@
 }
 @media (min-width: 800px) {
   .home_section {
-    width: 0;
+    width: 50%;
     height: 100%;
     float: right;
     background-position: center;
@@ -146,24 +146,26 @@
 
   .white_background {
     background: whitesmoke;
-    opacity:1;
-    transition: width 1s linear;
+    opacity:.25;
   }
 
   .background_dev {
     background-image: url("../resources/backgrounds/codeImage.jpg");
-    width:50%
+    opacity:1;
+    transition: opacity .25s linear;
 
   }
 
   .background_about {
     background-image: url("../resources/backgrounds/aboutCover.jpg");
-    width:50%
+    opacity:1;
+    transition: opacity .25s linear;
   }
 
   .background_camera {
     background-image: url("../resources/backgrounds/cameraCover.jpg");
-    width:50%
+    opacity:1;
+    transition: opacity .25s linear;
   }
 
   .itemText {

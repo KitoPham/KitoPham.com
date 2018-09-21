@@ -66,7 +66,6 @@ video{
 }
 .homeButton {
     display: inline-block;
-    /*background: linear-gradient(0deg,rgba(124,124,124,.3),rgba(124,124,124,.3)), url("resources/computer.jpg") no-repeat;*/
     color: white;
     float:left;
     position:absolute;
@@ -97,17 +96,16 @@ video{
   height: 25%;
   margin-bottom: 2%;
 }
-#Photography, #bigPhotography, #skinnyPhotography {
-  background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1)), url("../resources/backgrounds/cameraCover.jpg") no-repeat;
-  background-position: center;
-}
 
-#Coding, #skinnyCode, #shortCode, #bigCoding {
-  background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1)), url("../resources/backgrounds/codeImage.jpg") no-repeat;
+.overlay{
+  width:100%;
+  height:100%;
+  position:absolute;
+  background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1));
 }
 
 #About, #skinnyAbout, #shortAbout, #bigAbout{
-  background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1)), url("../resources/backgrounds/aboutCover.jpg") no-repeat
+  background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1));
 }
 
 .homeButtonText {
@@ -158,8 +156,6 @@ video{
     width: 49.6%;
     top: 0;
     right: 0;
-    background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1)), url("../resources/backgrounds/cameraCover.jpg") no-repeat;
-    background-position: center;
   }
 
   #Coding, #skinnyCode, #shortCode, #bigCoding {
@@ -167,7 +163,6 @@ video{
     left: 0;
     height: 49.25%;
     width: 49.6%;
-    background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1)), url("../resources/backgrounds/codeImage.jpg") no-repeat;
   }
 
   #About, #skinnyAbout, #shortAbout, #bigAbout {
@@ -175,7 +170,6 @@ video{
     left: 0;
     height: 49.25%;
     width: 49.6%;
-    background: linear-gradient(0deg, rgba(50, 100, 256, 0.3), rgba(50, 100, 256, 0.1)), url("../resources/backgrounds/aboutCover.jpg") no-repeat;
   }
 
   #bigPhotography, #bigAbout, #bigCoding {
@@ -192,10 +186,10 @@ video{
   }
 
   /*Modify Heights */
-
-  #shortAbout, #shortCode {
-    height: 14.25%;
+  #shortAbout, #shortCode{
+    height:14.25%;
   }
+
   #bigAbout, #bigCoding {
     z-index: 1;
     height: 84.25%;
