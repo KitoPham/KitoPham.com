@@ -49,7 +49,7 @@ class Home extends Component{
         };
 
         var imageStyle = {
-            width: this.props.width * 0.75
+            width: (this.props.width > 800 ? this.props.width * 0.75 : this.props.width)
         }
         return(
             <div className = "Content_Container">
@@ -134,7 +134,6 @@ class App extends Component {
             menuVisibility : false,
             width: 0, height: 0
         };
-        this.changePage = this.changePage.bind(this);
         this.toggleMenu = this.toggleMenu.bind(this);
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
@@ -153,16 +152,6 @@ class App extends Component {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
     }
 
-
-//Used to change state of homepage through header which is a separate component
-    changePage(index) {
-        this.setState({
-            currentPage: index,
-        });
-        console.log("current updated page index is" + this.state.currentPage);
-        console.log("index is " + index);
-    }
-
     toggleMenu(){
         this.setState({
           menuVisibility : !this.state.menuVisibility
@@ -179,7 +168,7 @@ class App extends Component {
         return (
             <Router>
                 <div>
-                    <MainHeader width = {this.state.width} changePage= {this.changePage} toggleMenu ={this.toggleMenu}/>
+                    <MainHeader width = {this.state.width} toggleMenu ={this.toggleMenu}/>
                     {expandedMenu}
                     <Switch>
                         <Route exact path={process.env.PUBLIC_URL + '/'} component = {()=>{return home}}/>
@@ -206,7 +195,7 @@ class App extends Component {
 
                         <Route component={()=>{return (<p> 404 page not found</p>)}}/>
                     </Switch>
-                    <Mainfooter changePage= {this.changePage}/>
+                    <Mainfooter/>
                 </div>
             </Router>
         );

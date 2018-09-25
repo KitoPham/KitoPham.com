@@ -471,21 +471,6 @@ h4{
 .pageGalleryImage:hover{
 }
 
-.about{
-    margin:40px 15% 200px 15%;
-    min-height: 80%;
-}
-
-.aboutPic{
-    max-width: 25%;
-  max-height: 400px;
-    float:right;
-}
-.aboutText{
-    max-width: 70%;
-    line-height: 1.65;
-}
-
 @media only screen and (max-width: 1100px) {
   body { font-size:120%;}
   .summary, .brief{ width: 350px}
@@ -501,4 +486,40 @@ h4{
 @media only screen and (max-width: 400px) {
   body { font-size:90%;}
   .pageImage{max-width: 80%}
+}
+
+//About Page CSS
+.about{
+  margin:40px 0 200px 0;
+  min-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutPic{
+  max-width: 50%;
+  margin-bottom: 30px;
+  border-radius:5px;
+}
+
+.aboutText{
+  max-width: 95%;
+  line-height: 1.65;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 1000px) {
+  .about{
+    margin:40px 15% 200px 15%;
+    display: block;
+  }
+  .aboutPic{
+    max-width: 25%;
+    max-height: 400px;
+    float:right;
+  }
+  .aboutText{
+    max-width: 70%;
+  }
 }
