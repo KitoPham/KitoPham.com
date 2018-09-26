@@ -11,5 +11,5 @@ To do list:
 - Firebase / input forms for updating project posts
 - Direct email
 - Dynamic floating action button with a circle menu
-- Responsive About page
+- ~~Responsive About page~~
 - Photography Gallery Page
